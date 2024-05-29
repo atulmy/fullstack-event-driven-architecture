@@ -8,7 +8,11 @@
 **/build
 **/dist
 
-# misc
+## Env
+**/.env.local
+**/.env.production
+
+# Misc
 **/.DS_Store
 .idea/
 .vscode/

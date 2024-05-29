@@ -4,7 +4,8 @@ export const params = {
     key: 'fullstack',
     name: 'Fullstack',
     tagline: 'Full-Stack Event Driven Architecture',
-    description: 'Full-stack event driven and highly scalable architecture using Node, React, Redis, MongoDB, and Docker.',
+    description:
+      'Full-stack event driven and highly scalable architecture using Node, React, Redis, MongoDB, and Docker.',
   },
 
   // common
@@ -23,6 +24,14 @@ export const params = {
         basic: 'YYYY-MM-DD',
         display: 'MMM D, YYYY, hh:mm a',
       },
+    },
+
+    limits: {
+      file: 1, // in MB
+    },
+
+    pagination: {
+      default: 10,
     },
 
     error: {
