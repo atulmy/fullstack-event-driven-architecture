@@ -28,6 +28,9 @@ export const params = {
 
     limits: {
       file: 1, // in MB
+      email: 50,
+      name: 50,
+      password: 50,
     },
 
     pagination: {

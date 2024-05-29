@@ -1,0 +1,58 @@
+.AlertDialogOverlay {
+  transform: translateZ(0);
+  will-change: transform;
+  animation-name: fadein;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  z-index: 12;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  background-color: var(--black-a9);
+}
+.AlertDialogContent {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  background-color: var(--gray-1);
+  box-shadow:
+    rgba(15, 15, 15, 0.05) 0 0 0 1px,
+    rgba(15, 15, 15, 0.1) 0 3px 6px,
+    rgba(15, 15, 15, 0.2) 0 9px 24px;
+  padding: 0;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  animation-name: scaleIn;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  outline: none;
+  margin: 10vh auto;
+  width: 90vw;
+  max-width: 27rem;
+  border: 1px solid var(--gray-4);
+}
+.AlertDialogContent:focus {
+  outline: none;
+}
+.AlertDialogContent .AlertDialogDescription {
+  color: var(--gray-12);
+  font-size: var(--font-size-para);
+  padding: 1rem 1.5rem;
+  white-space: break-spaces;
+}
+.AlertDialogContent .AlertDialogActions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--gray-5);
+  padding: 0.75rem 1.5rem;
+  background-color: var(--gray-2);
+  gap: 0.5rem;
+}

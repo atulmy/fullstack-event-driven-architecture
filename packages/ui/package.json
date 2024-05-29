@@ -10,6 +10,7 @@
   "dependencies": {
     "@nine-thirty-five/material-symbols-react": "^1.5.0",
     "@radix-ui/colors": "^3.0.0",
+    "@radix-ui/react-alert-dialog": "^1.0.5",
     "react-toastify": "^10.0.5",
     "the-new-css-reset": "^1.11.2"
   },

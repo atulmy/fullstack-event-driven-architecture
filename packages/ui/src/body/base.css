@@ -20,37 +20,54 @@ body {
   background-color: var(--sage-1);
 }
 
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  gap: 0.25rem;
+}
+
 input,
 textarea {
-  background-color: var(--gray-0);
-  border: 1px solid var(--gray-8);
-  border-radius: 0.5rem;
-  padding: 0.25rem 0.5rem;
+  background-color: var(--gray-1);
+  border: 2px solid var(--gray-8);
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.25rem;
 }
 input:hover,
 input:focus,
 textarea:hover,
 textarea:focus {
-  border-color: var(--blue-9);
+  border-color: var(--blue-10);
 }
 textarea {
   resize: vertical;
 }
 
 button {
-  background-color: var(--gray-0);
-  border: 1px solid var(--gray-8);
-  border-radius: 0.5rem;
-  padding: 0.25rem 0.75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: var(--blue-11);
+  color: var(--blue-1);
+  font-weight: var(--font-weight-bold);
+  border: 2px solid var(--blue-11);
+  border-radius: 0.25rem;
+  padding: 0.35rem 0.75rem;
   transition: all 0.1s;
   cursor: pointer !important;
 }
 button:hover {
-  border-color: var(--blue-9);
-  color: var(--blue-9);
+  background-color: var(--blue-10);
 }
 button:active {
   transform: scale(0.975);
+}
+button svg {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 table {
