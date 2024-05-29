@@ -1,0 +1,33 @@
+{
+  "name": "@packages/ui",
+  "version": "1.0.0",
+  "type": "module",
+  "module": "build/index.js",
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "@nine-thirty-five/material-symbols-react": "^1.5.0",
+    "@radix-ui/colors": "^3.0.0",
+    "react-toastify": "^10.0.5",
+    "the-new-css-reset": "^1.11.2"
+  },
+  "peerDependencies": {
+    "clsx": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "rollup": "^4.18.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.77.2",
+    "typescript": "^5.4.5"
+  }
+}

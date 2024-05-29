@@ -1,0 +1,22 @@
+{
+  "name": "@packages/model",
+  "version": "1.0.0",
+  "type": "module",
+  "module": "build/index.js",
+  "scripts": {
+    "start": "rollup -c -w",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.8",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.18.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "mongoose": "^8.3.0"
+  }
+}

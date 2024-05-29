@@ -1,0 +1,11 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "./src",
+    "noEmit": true,
+    "outDir": "./build"
+  },
+  "include": ["./src/"],
+  "ts-node": { "swc": true }
+}

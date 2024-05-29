@@ -1,0 +1,9 @@
+:root {
+  /* fonts */
+  --font-size: 16px;
+  --font-family: 'Poppins', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+
+  --gray-0: #fff;
+}

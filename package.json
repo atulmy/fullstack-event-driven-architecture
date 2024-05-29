@@ -1,0 +1,37 @@
+{
+  "name": "fullstack",
+  "version": "1.0.0",
+  "scripts": {
+    "common": "npm run start -w @packages/common",
+    "model": "npm run start -w @packages/model",
+    "ui": "npm run start -w @packages/ui",
+    "api.core": "npm run start -w @projects/api.core",
+    "api.stt": "npm run start -w @projects/api.stt",
+    "api.tts": "npm run start -w @projects/api.tts",
+    "app.console": "npm run start -w @projects/app.console",
+    "app.web": "npm run start -w @projects/app.web",
+    "site.web": "npm run start -w @projects/site.web",
+    "reinstall": "npm run clean && npm i --package-lock-only --force && npm ci  --loglevel=error && npm run build:packages",
+    "build:packages": "npm run build -w @packages/common && npm run build -w @packages/model && npm run build -w @packages/ui",
+    "clean": "sh ./clean.sh",
+    "prepare": "npx husky install"
+  },
+  "workspaces": [
+    "packages/common",
+    "packages/model",
+    "packages/ui",
+    "projects/api/core",
+    "projects/api/stt",
+    "projects/api/tts",
+    "projects/app/console",
+    "projects/app/web",
+    "projects/site/web"
+  ],
+  "dependencies": {
+    "workspaces": "^0.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  }
+}

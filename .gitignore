@@ -1,0 +1,14 @@
+# Dependencies
+**/node_modules
+
+# Generated
+**/.next
+**.rollup.cache
+**tsconfig.tsbuildinfo
+**/build
+**/dist
+
+# misc
+**/.DS_Store
+.idea/
+.vscode/

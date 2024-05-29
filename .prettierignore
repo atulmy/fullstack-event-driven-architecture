@@ -1,0 +1,9 @@
+# Dependencies
+**/node_modules
+
+# Generated
+**/build
+**/.next
+
+# misc
+**.old

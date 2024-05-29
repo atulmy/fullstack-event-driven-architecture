@@ -1,0 +1,34 @@
+{
+  "name": "@projects/app.web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "next dev -p 4001",
+    "build": "next build",
+    "start:prod": "next start -p 4001"
+  },
+  "dependencies": {
+    "@packages/common": "*",
+    "@packages/ui": "*",
+    "@react-oauth/google": "^0.12.1",
+    "@trpc/client": "^10.45.2",
+    "@trpc/server": "^10.45.2",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.11",
+    "jotai": "^2.8.1",
+    "lodash": "^4.17.21",
+    "next": "14.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-scroll": "^1.9.0",
+    "react-textarea-autosize": "^8.5.3",
+    "recharts": "^2.12.7",
+    "sass": "^1.77.2"
+  },
+  "devDependencies": {
+    "@swc-jotai/react-refresh": "^0.1.0",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
+    "typescript": "^5.4.5"
+  }
+}

@@ -1,0 +1,78 @@
+/* reset */
+* {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  color: var(--gray-12);
+}
+
+body {
+  display: flex;
+  flex: 1;
+  background-color: var(--sage-1);
+}
+
+input,
+textarea {
+  background-color: var(--gray-0);
+  border: 1px solid var(--gray-8);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+  border-color: var(--blue-9);
+}
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: var(--gray-0);
+  border: 1px solid var(--gray-8);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  transition: all 0.1s;
+  cursor: pointer !important;
+}
+button:hover {
+  border-color: var(--blue-9);
+  color: var(--blue-9);
+}
+button:active {
+  transform: scale(0.975);
+}
+
+table {
+  width: 100%;
+}
+table > thead > tr > th {
+  font-weight: var(--font-weight-bold);
+}
+table > thead > tr > th,
+table > tbody > tr > td {
+  padding: 0.75rem 1.5rem 0.75rem 0;
+  border-bottom: 1px solid var(--gray-4);
+}
+table > tbody > tr:last-child > td {
+  border-bottom: none;
+}
+table > tbody > tr > td > a {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--font-weight-bold);
+}

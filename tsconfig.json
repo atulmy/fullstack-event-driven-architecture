@@ -1,0 +1,13 @@
+{
+  "references": [
+    { "path": "./packages/common" },
+    { "path": "./packages/model" },
+    { "path": "./packages/ui" },
+    { "path": "./projects/api/core" },
+    { "path": "./projects/api/stt" },
+    { "path": "./projects/api/tts" },
+    { "path": "./projects/app/console" },
+    { "path": "./projects/app/web" },
+    { "path": "./projects/site/web" }
+  ]
+}

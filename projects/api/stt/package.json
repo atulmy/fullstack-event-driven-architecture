@@ -1,0 +1,39 @@
+{
+  "name": "@projects/api.stt",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development nodemon",
+    "start:prod": "NODE_ENV=production node ./build/index.js",
+    "build": "NODE_ENV=production tsc --build --verbose"
+  },
+  "dependencies": {
+    "@packages/common": "*",
+    "body-parser": "^1.20.2",
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ip": "^2.0.1",
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0",
+    "openai": "^4.31.0"
+  },
+  "devDependencies": {
+    "@swc/core": "1.4.11",
+    "@swc/helpers": "0.5.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.11",
+    "@types/node": "^20.12.2",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5",
+    "pretty-quick": "^4.0.0",
+    "regenerator-runtime": "^0.14.1",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.8",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.4.3"
+  }
+}
