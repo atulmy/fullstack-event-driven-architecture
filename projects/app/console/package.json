@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "next dev -p 4001",
+    "start": "next dev -p 4002",
     "build": "next build",
-    "start:prod": "next start -p 4001"
+    "start:prod": "next start -p 4002"
   },
   "dependencies": {
     "@packages/common": "*",
@@ -15,9 +15,9 @@
     "@trpc/server": "^10.45.2",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.11",
-    "jotai": "^2.8.1",
+    "jotai": "^2.8.2",
     "lodash": "^4.17.21",
-    "next": "14.2.3",
+    "next": "14.1.4",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-scroll": "^1.9.0",
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@swc-jotai/react-refresh": "^0.1.0",
     "@types/node": "^20.12.12",
-    "@types/react": "^18.3.2",
+    "@types/react": "^18.3.3",
     "typescript": "^5.4.5"
   }
 }
