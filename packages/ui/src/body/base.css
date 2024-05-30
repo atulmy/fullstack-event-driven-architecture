@@ -89,7 +89,16 @@ table > tbody > tr > td > a {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.35rem;
+}
+p {
+  font-size: 1rem;
 }

@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation'
 
 // UI imports
 import { IconCheck } from '@packages/ui/build/icons'
-import style from './page.module.scss'
 
 // Common imports
 import { params } from '@packages/common/build/params'
@@ -34,7 +33,7 @@ const Login = () => {
   // effect
   useEffect(() => {
     if (isAuthenticated) {
-      router.replace(routes.users.path)
+      router.replace(routes.jobs.path)
     }
   }, [isAuthenticated])
 
@@ -84,8 +83,8 @@ const Login = () => {
 
   // render
   return (
-    <form className={style.login} onSubmit={onSubmit}>
-      <h1>Login</h1>
+    <form onSubmit={onSubmit}>
+      <h2>Login</h2>
 
       <label>
         Email
