@@ -23,8 +23,8 @@ const Layout = ({ children }) => {
 
   // effect
   useEffect(() => {
-    if (isAuthenticated) {
-      router.replace(routes.jobs.path)
+    if (!isAuthenticated) {
+      router.replace(routes.login.path)
     }
   }, [isAuthenticated])
 

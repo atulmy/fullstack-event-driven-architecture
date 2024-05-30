@@ -26,7 +26,7 @@ const Login = () => {
   const [{ isAuthenticated }, setAuth] = useAtom(userAuth)
   const [isSubmitting, isSubmittingToggle] = useState(false)
   const [user, setUser] = useState({
-    email: isDevelopment() ? 'admin@purro.ai' : '',
+    email: isDevelopment() ? 'user@example.com' : '',
     password: isDevelopment() ? '123456' : '',
   })
 
@@ -45,7 +45,7 @@ const Login = () => {
 
     try {
       // api
-      const data = await api.user.adminAuthLogin.query({
+      const data = await api.user.authLogin.query({
         email: user.email,
         password: user.password,
       })
@@ -109,7 +109,6 @@ const Login = () => {
           onChange={onChange}
           required
           placeholder='Enter password'
-          className='animation fade-in'
           maxLength={params.common.limits.password}
         />
       </label>

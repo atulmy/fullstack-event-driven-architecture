@@ -1,7 +1,7 @@
 // Imports
 import mongoose, { Schema } from 'mongoose'
 
-// App imports
+// Local imports
 import { BlogInterface } from './types.js'
 
 // Collection name

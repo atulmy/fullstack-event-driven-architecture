@@ -70,6 +70,10 @@ button svg {
   height: 1.25rem;
 }
 
+a {
+  cursor: pointer !important;
+}
+
 table {
   width: 100%;
 }

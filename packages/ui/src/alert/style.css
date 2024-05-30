@@ -1,10 +1,6 @@
 .AlertDialogOverlay {
   transform: translateZ(0);
   will-change: transform;
-  animation-name: fadein;
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
-  opacity: 0;
   z-index: 12;
   position: fixed;
   top: 0;
@@ -27,10 +23,6 @@
   overflow: hidden;
   transform: translateZ(0);
   will-change: transform;
-  animation-name: scaleIn;
-  animation-duration: 0.3s;
-  animation-fill-mode: forwards;
-  opacity: 0;
   outline: none;
   margin: 10vh auto;
   width: 90vw;
@@ -54,5 +46,5 @@
   border-top: 1px solid var(--gray-5);
   padding: 0.75rem 1.5rem;
   background-color: var(--gray-2);
-  gap: 0.5rem;
+  gap: 0.75rem;
 }

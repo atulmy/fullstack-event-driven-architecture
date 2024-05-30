@@ -16,10 +16,10 @@ import { procedurePublic } from '../../../server/rpc.js'
 // procedure
 export const authLogin = procedurePublic
   .input(z.object({ email: z.string(), password: z.string() }))
-  .query(async (payload) => {
+  .query(async ({ input }) => {
     try {
-      const email = emailClean(payload.input.email)
-      const password = emailClean(payload.input.email)
+      const email = emailClean(input.email)
+      const password = input.password.trim()
 
       // Get user
       const user = await User.findOne({
