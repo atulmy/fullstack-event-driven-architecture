@@ -13,10 +13,12 @@ import { SECURITY_SECRET } from '../common/config/env.js'
 import { router } from './rpc.js'
 
 // modules
+import { job } from '../modules/job/index.js'
 import { user } from '../modules/user/index.js'
 
 // router
 const appRouter = router({
+  job,
   user,
 })
 
