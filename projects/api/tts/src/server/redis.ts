@@ -25,3 +25,13 @@ publisher.connect()
 publisher.on('error', (error) => {
   console.log(`ERROR - Connection failed Redis publisher: ${error.message}`)
 })
+
+// Disconnect database
+export async function close() {
+  console.info('INFO - Disconnecting redis..')
+
+  await publisher.quit()
+  await subscriber.quit()
+
+  console.info('INFO - Redis disconnected.')
+}

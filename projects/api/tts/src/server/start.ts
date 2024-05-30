@@ -3,6 +3,7 @@ import ip from 'ip'
 
 // App imports
 import { PORT, ENV } from '../common/config/env.js'
+import { close as redisClose } from './redis.js'
 
 // Start server
 export async function start(app, server) {
@@ -25,6 +26,10 @@ export async function start(app, server) {
 
       serverProcess.close(async () => {
         console.info('INFO - Server has been shut down.')
+
+        await redisClose()
+
+        process.exit(0)
       })
     })
   }

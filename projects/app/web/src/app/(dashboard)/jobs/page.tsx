@@ -62,25 +62,27 @@ const Jobs = () => {
       {isRefreshing ? (
         <Loader />
       ) : jobs.length ? (
-        <table>
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Created</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {jobs.map((j) => (
-              <tr key={j._id}>
-                <td>{j.type}</td>
-                <td>{j.status}</td>
-                <td>{day(j.createdAt).format(params.common.date.format.display)}</td>
+        <div className={style.list}>
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Status</th>
+                <th style={{ width: '14rem' }}>Created</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {jobs.map((j) => (
+                <tr key={j._id}>
+                  <td>{j.type}</td>
+                  <td>{j.status}</td>
+                  <td>{day(j.createdAt).format(params.common.date.format.display)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       ) : (
         <p>No jobs found.</p>
       )}

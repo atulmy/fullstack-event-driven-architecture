@@ -27,6 +27,12 @@ rm -rf ./packages/ui/node_modules
 # -- core
 rm -rf ./projects/api/core/build
 rm -rf ./projects/api/core/node_modules
+# -- stt
+rm -rf ./projects/api/stt/build
+rm -rf ./projects/api/stt/node_modules
+# -- tts
+rm -rf ./projects/api/tts/build
+rm -rf ./projects/api/tts/node_modules
 # - app
 # -- console
 rm -rf ./projects/app/console/.next

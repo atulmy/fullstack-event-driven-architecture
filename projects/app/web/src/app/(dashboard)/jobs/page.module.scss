@@ -3,4 +3,12 @@
   flex-direction: column;
   flex: 1;
   gap: 0.5rem;
+  overflow: hidden;
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }

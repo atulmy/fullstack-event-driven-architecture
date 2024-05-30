@@ -16,11 +16,9 @@ subscriber.subscribe(params.job.types.tts.channels.start, async (event) => {
 
   console.log('jobId', jobId)
 
-  return false
-
   // websocket
   try {
-    if (jobId && data) {
+    if (jobId && data && data.text) {
       // openai - tts
       const audio = await openai.audio.speech.create({
         model: 'tts-1',
