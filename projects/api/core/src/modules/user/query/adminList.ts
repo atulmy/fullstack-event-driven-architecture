@@ -6,7 +6,7 @@ import { z } from 'zod'
 import { params } from '@packages/common/build/params.js'
 import { User } from '@packages/model/build/user/model.js'
 
-// App imports
+// Local imports
 import { procedureAdmin } from '../../../server/rpc.js'
 
 // procedure

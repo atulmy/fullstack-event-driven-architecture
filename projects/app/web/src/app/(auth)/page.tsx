@@ -84,43 +84,41 @@ const Login = () => {
 
   // render
   return (
-    <div className={style.login}>
-      <form onSubmit={onSubmit}>
-        <h1>Console login</h1>
+    <form className={style.login} onSubmit={onSubmit}>
+      <h1>Login</h1>
 
-        <label>
-          Email
-          <input
-            type='email'
-            name='email'
-            value={user.email}
-            onChange={onChange}
-            required
-            placeholder='Enter your email'
-            maxLength={params.common.limits.email}
-            autoFocus
-          />
-        </label>
+      <label>
+        Email
+        <input
+          type='email'
+          name='email'
+          value={user.email}
+          onChange={onChange}
+          required
+          placeholder='Enter your email'
+          maxLength={params.common.limits.email}
+          autoFocus
+        />
+      </label>
 
-        <label>
-          Password
-          <input
-            type='password'
-            name='password'
-            value={user.password}
-            onChange={onChange}
-            required
-            placeholder='Enter password'
-            className='animation fade-in'
-            maxLength={params.common.limits.password}
-          />
-        </label>
+      <label>
+        Password
+        <input
+          type='password'
+          name='password'
+          value={user.password}
+          onChange={onChange}
+          required
+          placeholder='Enter password'
+          className='animation fade-in'
+          maxLength={params.common.limits.password}
+        />
+      </label>
 
-        <button type='submit' disabled={isSubmitting}>
-          <IconCheck /> Submit
-        </button>
-      </form>
-    </div>
+      <button type='submit' disabled={isSubmitting}>
+        <IconCheck /> Submit
+      </button>
+    </form>
   )
 }
 

@@ -9,7 +9,7 @@ import { params } from '@packages/common/build/params.js'
 import { emailClean } from '@packages/common/build/utils.js'
 import { User } from '@packages/model/build/user/model.js'
 
-// App imports
+// Local imports
 import { SECURITY_SECRET } from '../../../common/config/env.js'
 import { procedurePublic } from '../../../server/rpc.js'
 

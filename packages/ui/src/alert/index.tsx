@@ -2,7 +2,6 @@
 import * as A from '@radix-ui/react-alert-dialog'
 
 // UI imports
-import { Button } from '../button'
 import './style.css'
 
 // Component
@@ -22,22 +21,22 @@ export const Alert = ({
       <A.Portal>
         <A.Overlay className='AlertDialogOverlay'>
           <A.Content className='AlertDialogContent'>
-            <A.Description className='AlertDialogDescription'>
-              {description}
-            </A.Description>
+            <A.Description className='AlertDialogDescription'>{description}</A.Description>
 
             <div className='AlertDialogActions'>
               {action && (
                 <A.Action asChild>
                   <div>
-                    <Button onClick={onAction} title={action} />
+                    <button type='button' onClick={onAction}>
+                      {action}
+                    </button>
                   </div>
                 </A.Action>
               )}
 
               <A.Cancel asChild>
                 <div>
-                  <Button title='Cancel' variant='text' onClick={onCancel} />
+                  <a onClick={onCancel}>Cancel</a>
                 </div>
               </A.Cancel>
             </div>

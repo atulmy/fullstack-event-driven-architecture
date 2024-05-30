@@ -1,7 +1,7 @@
 // Imports
 import OpenAI from 'openai'
 
-// App imports
+// Local imports
 import { OPENAI_API_KEY } from '../config/env.js'
 
 // config

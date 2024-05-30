@@ -3,7 +3,7 @@ import {
   Add as IconAdd,
   Close as IconClose,
   Check as IconCheck,
-  DeleteForever as IconDeleteForever,
+  Rocket as IconRocket,
   Settings as IconSettings,
 } from '@nine-thirty-five/material-symbols-react/rounded'
 
@@ -12,6 +12,6 @@ export {
   IconAdd,
   IconClose,
   IconCheck,
-  IconDeleteForever,
+  IconRocket,
   IconSettings,
 }

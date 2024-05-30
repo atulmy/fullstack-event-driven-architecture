@@ -8,7 +8,7 @@ import { params } from '@packages/common/build/params.js'
 import { emailClean } from '@packages/common/build/utils.js'
 import { User } from '@packages/model/build/user/model.js'
 
-// App imports
+// Local imports
 import { procedurePublic } from '../../../server/rpc.js'
 import { SECURITY_SALT_ROUNDS } from '../../../common/config/env.js'
 
