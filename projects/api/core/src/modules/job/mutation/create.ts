@@ -39,9 +39,10 @@ export const create = procedureUser
       if (job) {
         // redis - publish
         await redisPub.publish(
-          params.job.types.stt.channels.start,
+          params.job.types[type].channels.start,
           JSON.stringify({
             jobId: job._id,
+            data,
           })
         )
 
