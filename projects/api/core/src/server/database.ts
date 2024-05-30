@@ -5,13 +5,6 @@ mongoose.set('strictQuery', true)
 // Local imports
 import { ENV, DATABASE_URL } from '../common/config/env.js'
 
-// Connect database
-export async function database() {
-  console.info('SETUP - Connecting database..')
-
-  await connectWithRetry()
-}
-
 // Drop database
 export async function drop() {
   if (ENV === 'development') {
@@ -51,3 +44,8 @@ mongoose.connection.on('error', (error) => {
 const connectWithRetry = async () => {
   return await mongoose.connect(DATABASE_URL)
 }
+
+// Connect database
+console.info('SETUP - Connecting database..')
+
+await connectWithRetry()

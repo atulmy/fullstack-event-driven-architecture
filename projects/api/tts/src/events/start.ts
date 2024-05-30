@@ -7,7 +7,6 @@ import { params } from '@packages/common/build/params.js'
 
 // App imports
 import { subscriber, publisher } from '../server/redis.js'
-import { OPENAI_API_KEY } from '../common/config/env.js'
 import { openai } from '../common/config/openai.js'
 import { storageFilePath, storageFileDelete } from '../common/helpers/utils.js'
 
@@ -15,7 +14,9 @@ import { storageFilePath, storageFileDelete } from '../common/helpers/utils.js'
 subscriber.subscribe(params.job.types.tts.channels.start, async (event) => {
   const { jobId, data } = JSON.parse(event)
 
-  console.log('data', data.text)
+  console.log('jobId', jobId)
+
+  return false
 
   // websocket
   try {
@@ -40,7 +41,7 @@ subscriber.subscribe(params.job.types.tts.channels.start, async (event) => {
         await writeFile(filePath, buffer)
 
         // delete local file
-        storageFileDelete(filePath)
+        // storageFileDelete(filePath)
 
         status = params.job.status.completed.key
         file = fileName

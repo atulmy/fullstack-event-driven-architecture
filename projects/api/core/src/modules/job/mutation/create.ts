@@ -9,7 +9,7 @@ import { Job } from '@packages/model/build/job/model.js'
 // Local imports
 import { procedureUser } from '../../../server/rpc.js'
 import { eventEmitter } from '../../../common/config/event.js'
-import { redisPub } from '../../../server/redis.js'
+import { publisher } from '../../../server/redis.js'
 
 // procedure
 export const create = procedureUser
@@ -38,7 +38,7 @@ export const create = procedureUser
 
       if (job) {
         // redis - publish
-        await redisPub.publish(
+        await publisher.publish(
           params.job.types[type].channels.start,
           JSON.stringify({
             jobId: job._id,

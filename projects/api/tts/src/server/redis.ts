@@ -4,19 +4,16 @@ import { createClient } from 'redis'
 // Local imports
 import { REDIS_HOSTNAME } from '../common/config/env.js'
 
+console.info('SETUP - Connecting to Redis..')
+
 // Create a Redis client for subscribing
 export const subscriber = createClient({
   url: 'redis://' + REDIS_HOSTNAME,
 })
 subscriber.connect()
 
-subscriber.on('error', (err) => {
-  console.error('Redis error:', err)
-})
-
-// Connect to Redis and subscribe to a channel
-subscriber.on('connect', () => {
-  console.log('Connected to Redis subscriber')
+subscriber.on('error', (error) => {
+  console.log(`ERROR - Connection failed Redis subscriber: ${error.message}`)
 })
 
 // Create a Redis client for subscribing
@@ -25,11 +22,6 @@ export const publisher = createClient({
 })
 publisher.connect()
 
-publisher.on('error', (err) => {
-  console.error('Redis error:', err)
-})
-
-// Connect to Redis and subscribe to a channel
-publisher.on('connect', () => {
-  console.log('Connected to Redis publisher')
+publisher.on('error', (error) => {
+  console.log(`ERROR - Connection failed Redis publisher: ${error.message}`)
 })

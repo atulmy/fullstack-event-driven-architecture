@@ -3,47 +3,25 @@ import { createClient } from 'redis'
 
 // Local imports
 import { REDIS_HOSTNAME } from '../common/config/env.js'
-import { eventEmitter } from '../common/config/event.js'
 
-// Connect redis
-export let redisSub = null
-export let redisPub = null
+console.info('SETUP - Connecting to Redis..')
 
-export async function connect() {
-  if (REDIS_HOSTNAME) {
-    console.info('SETUP - Connecting redis..')
-    await connectWithRetry()
-  }
-}
+// Create a Redis client for subscribing
+export const subscriber = createClient({
+  url: 'redis://' + REDIS_HOSTNAME,
+})
+subscriber.connect()
 
-// Disconnect redis
-export async function close() {
-  console.info('INFO - Disconnecting redis..')
-}
+subscriber.on('error', (error) => {
+  console.log(`ERROR - Connection failed Redis subscriber: ${error.message}`)
+})
 
-// Retry connection
-const connectWithRetry = async () => {
-  try {
-    redisSub = createClient({
-      url: 'redis://' + REDIS_HOSTNAME,
-    })
-    await redisSub.connect()
+// Create a Redis client for subscribing
+export const publisher = createClient({
+  url: 'redis://' + REDIS_HOSTNAME,
+})
+publisher.connect()
 
-    redisPub = createClient({
-      url: 'redis://' + REDIS_HOSTNAME,
-    })
-    await redisPub.connect()
-
-    // subscribe to all events
-    redisSub.subscribe('events', (event) => {
-      const { type, payload } = JSON.parse(event)
-
-      console.log('redis', type, payload)
-
-      // websocket
-      eventEmitter.emit(type, payload)
-    })
-  } catch (error) {
-    console.log('Failed to connect to Redis', error.message)
-  }
-}
+publisher.on('error', (error) => {
+  console.log(`ERROR - Connection failed Redis publisher: ${error.message}`)
+})
