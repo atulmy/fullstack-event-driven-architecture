@@ -1,8 +1,8 @@
 'use client'
 
 // Imports
-import { useState, useEffect } from 'react'
-import { useAtom } from 'jotai'
+import { useState } from 'react'
+import { useSetAtom } from 'jotai'
 import { useRouter } from 'next/navigation'
 
 // UI imports
@@ -23,19 +23,12 @@ const Login = () => {
   const router = useRouter()
 
   // state
-  const [{ isAuthenticated }, setAuth] = useAtom(userAuth)
+  const setAuth = useSetAtom(userAuth)
   const [isSubmitting, isSubmittingToggle] = useState(false)
   const [user, setUser] = useState({
     email: isDevelopment() ? 'user@example.com' : '',
     password: isDevelopment() ? '123456' : '',
   })
-
-  // effect
-  useEffect(() => {
-    if (isAuthenticated) {
-      router.replace(routes.jobs.path)
-    }
-  }, [isAuthenticated])
 
   // onSubmit
   const onSubmit = async (event) => {

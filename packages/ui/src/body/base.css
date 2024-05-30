@@ -106,3 +106,7 @@ h2 {
 p {
   font-size: 1rem;
 }
+em {
+  font-style: italic;
+  font-size: 0.8rem;
+}

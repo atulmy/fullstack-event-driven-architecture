@@ -7,14 +7,19 @@
   .left {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 1rem 1.5rem;
     border: 1px solid var(--gray-6);
-    background-color: var(--gray-1);
+    background-color: var(--gray-2);
     border-radius: 0.5rem;
     width: 20rem;
 
     h2 {
       margin-bottom: 1.5rem;
+    }
+
+    em {
+      color: var(--gray-9);
     }
   }
 

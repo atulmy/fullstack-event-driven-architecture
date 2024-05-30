@@ -1,26 +1,5 @@
-.auth {
+.dashboard {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex: 1;
-  gap: 2rem;
-
-  .left {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 1.5rem;
-    border: 1px solid var(--gray-6);
-    background-color: var(--gray-1);
-    border-radius: 0.5rem;
-    width: 20rem;
-
-    h2 {
-      margin-bottom: 1.5rem;
-    }
-  }
-
-  .right {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
 }

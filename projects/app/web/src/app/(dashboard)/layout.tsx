@@ -11,7 +11,6 @@ import style from './layout.module.scss'
 // Local imports
 import { userAuth } from '@/modules/user/state/auth'
 import { routes } from '@/common/routes'
-import { params } from '@packages/common/build/params'
 
 // Component
 const Layout = ({ children }) => {
@@ -29,16 +28,7 @@ const Layout = ({ children }) => {
   }, [isAuthenticated])
 
   // render
-  return (
-    <div className={style.auth}>
-      <div className={style.left}>{children}</div>
-
-      <div className={style.right}>
-        <h1>{params.site.tagline}</h1>
-        <p>{params.site.description}</p>
-      </div>
-    </div>
-  )
+  return <div className={style.dashboard}>{children}</div>
 }
 
 export default Layout

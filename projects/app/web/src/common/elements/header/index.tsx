@@ -67,7 +67,7 @@ export const Header = () => {
         {isAuthenticated && (
           <nav className={style.right}>
             <Alert
-              trigger={<a href='#'>Logout</a>}
+              trigger={<a>Logout</a>}
               description='Are you sure you want to logout?'
               action='Yes'
               onAction={onLogout}

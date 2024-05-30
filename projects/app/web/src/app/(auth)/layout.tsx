@@ -31,7 +31,14 @@ const Layout = ({ children }) => {
   // render
   return (
     <div className={style.auth}>
-      <div className={style.left}>{children}</div>
+      <div className={style.left}>
+        {children}
+
+        <em>
+          By continuing, you agree to accept {params.site.name}'s terms & condition and privacy
+          policy.
+        </em>
+      </div>
 
       <div className={style.right}>
         <h1>{params.site.tagline}</h1>
