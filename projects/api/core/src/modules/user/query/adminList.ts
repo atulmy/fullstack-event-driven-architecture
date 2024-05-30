@@ -24,7 +24,7 @@ export const adminList = procedureAdmin
       const data = await User.find({
         isDeleted: false,
       })
-        .select(['_id', 'email', 'name', 'createdAt'])
+        .select(['_id', 'email', 'name', 'role', 'createdAt'])
         .sort({ _id: -1 })
         .limit(limit)
         .skip(skip)

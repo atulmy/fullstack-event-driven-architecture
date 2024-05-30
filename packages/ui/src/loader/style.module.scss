@@ -1,0 +1,13 @@
+.loader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  svg {
+    fill: var(--gray-9);
+  }
+
+  p {
+    color: var(--gray-9);
+  }
+}

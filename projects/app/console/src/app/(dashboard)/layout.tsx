@@ -10,6 +10,7 @@ import style from './layout.module.scss'
 
 // Local imports
 import { userAuth } from '@/modules/user/state/auth'
+import { Header } from '@/common/elements/header'
 import { routes } from '@/common/routes'
 
 // Component
@@ -28,7 +29,13 @@ const Layout = ({ children }) => {
   }, [isAuthenticated])
 
   // render
-  return <div className={style.dashboard}>{children}</div>
+  return (
+    <>
+      <Header />
+
+      <main className={style.main}>{children}</main>
+    </>
+  )
 }
 
 export default Layout

@@ -8,12 +8,13 @@ import { useRouter } from 'next/navigation'
 
 // UI imports
 import { Alert } from '@packages/ui/build/alert'
-import { IconLogo } from '@packages/ui/build/icons'
+import { IconRocket } from '@packages/ui/build/icons'
 import style from './style.module.scss'
 
 // Local imports
 import { userAuth, initial } from '@/modules/user/state/auth'
 import { routes } from '@/common/routes'
+import { params } from '@packages/common/build/params'
 
 // Component
 export const Header = () => {
@@ -33,7 +34,7 @@ export const Header = () => {
   const onLogout = async () => {
     setAuth(initial)
 
-    router.push(routes.auth.path)
+    router.push(routes.login.path)
   }
 
   // render
@@ -42,31 +43,24 @@ export const Header = () => {
       <header className={style.header}>
         <nav className={style.left}>
           <Link
-            href={isAuthenticated ? routes.users.path : routes.auth.path}
+            href={isAuthenticated ? routes.users.path : routes.login.path}
             className={style.brand}
           >
-            <IconLogo />
-            Console
+            <IconRocket />
+            {params.site.name} Console
           </Link>
 
-          {isAuthenticated && (
-            <>
-              <Link href={routes.users.path}>Users</Link>
-              <Link href={routes.blog.path}>Blog</Link>
-            </>
-          )}
+          <Link href={routes.users.path}>Users</Link>
         </nav>
 
-        {isAuthenticated && (
-          <nav className={style.right}>
-            <Alert
-              trigger={<a href='#'>Logout</a>}
-              description='Are you sure you want to logout?'
-              action='Yes'
-              onAction={onLogout}
-            />
-          </nav>
-        )}
+        <nav className={style.right}>
+          <Alert
+            trigger={<a>Logout</a>}
+            description='Are you sure you want to logout?'
+            action='Yes'
+            onAction={onLogout}
+          />
+        </nav>
       </header>
     )
   )

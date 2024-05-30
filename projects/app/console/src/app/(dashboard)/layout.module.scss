@@ -1,5 +1,7 @@
-.dashboard {
+.main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex: 1;
+  padding: 0 2rem 1.5rem 2rem;
+  overflow: hidden;
 }

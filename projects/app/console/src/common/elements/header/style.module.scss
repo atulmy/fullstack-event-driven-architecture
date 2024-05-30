@@ -28,14 +28,6 @@
         transition: fill 0.1s;
       }
 
-      &.brand {
-        font-weight: var(--font-weight-medium);
-      }
-
-      &.active {
-        color: var(--grass-11);
-        font-weight: var(--font-weight-medium);
-      }
       &:hover {
         color: var(--grass-11);
 
@@ -48,23 +40,5 @@
 
   .left {
     flex: 1;
-  }
-}
-
-/* responsive */
-@media (max-width: 1023px) {
-  .header {
-    height: 3rem;
-    margin-bottom: 0.25rem;
-    width: 100vw;
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    .left,
-    .right {
-      a {
-        padding: 0.5rem;
-      }
-    }
   }
 }
