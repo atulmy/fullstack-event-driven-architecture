@@ -55,8 +55,8 @@ export const Header = () => {
           {isAuthenticated ? (
             <>
               <Link href={routes.jobs.path}>Jobs</Link>
-              <Link href={routes.stt.path}>Speech to Text</Link>
               <Link href={routes.tts.path}>Text to Speech</Link>
+              <Link href={routes.stt.path}>Speech to Text</Link>
             </>
           ) : (
             <>

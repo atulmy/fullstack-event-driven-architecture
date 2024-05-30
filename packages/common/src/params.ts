@@ -31,6 +31,7 @@ export const params = {
       email: 50,
       name: 50,
       password: 50,
+      text: 500,
     },
 
     pagination: {
@@ -70,14 +71,9 @@ export const params = {
         key: 'stt',
         name: 'Speech to Text',
 
-        topics: {
-          start: 'stt-start-topic',
-          finish: 'stt-finish-topic',
-        },
-
-        subscriptions: {
-          start: 'stt-start-subscription',
-          finish: 'stt-finish-subscription',
+        channels: {
+          start: 'job.stt.start',
+          finish: 'job.stt.finish',
         },
       },
 
@@ -85,14 +81,9 @@ export const params = {
         key: 'tts',
         name: 'Text to Speech',
 
-        topics: {
-          start: 'tts-start-topic',
-          finish: 'tts-finish-topic',
-        },
-
-        subscriptions: {
-          start: 'tts-start-subscription',
-          finish: 'tts-finish-subscription',
+        channels: {
+          start: 'job.tts.start',
+          finish: 'job.tts.finish',
         },
       },
     },

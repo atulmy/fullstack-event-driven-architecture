@@ -43,6 +43,10 @@ textarea:focus {
 textarea {
   resize: vertical;
 }
+input::placeholder,
+textarea::placeholder {
+  color: var(--gray-8);
+}
 
 button {
   display: flex;
@@ -108,6 +112,6 @@ p {
   font-size: 1rem;
 }
 em {
-  font-style: italic;
   font-size: 0.8rem;
+  color: var(--gray-9);
 }

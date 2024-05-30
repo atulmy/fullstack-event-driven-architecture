@@ -56,7 +56,7 @@ const Jobs = () => {
 
   // render
   return (
-    <div className={style.users}>
+    <div className={style.jobs}>
       <h2>Jobs</h2>
 
       {isRefreshing ? (
