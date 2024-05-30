@@ -11,10 +11,12 @@ import { Alert } from '@packages/ui/build/alert'
 import { IconRocket } from '@packages/ui/build/icons'
 import style from './style.module.scss'
 
+// Common imports
+import { params } from '@packages/common/build/params'
+
 // Local imports
 import { userAuth, initial } from '@/modules/user/state/auth'
 import { routes } from '@/common/routes'
-import { params } from '@packages/common/build/params'
 
 // Component
 export const Header = () => {

@@ -18,6 +18,15 @@
       margin-bottom: 1.5rem;
     }
 
+    p {
+      margin-top: 1.5rem;
+      color: var(--gray-11);
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
     em {
       color: var(--gray-9);
     }

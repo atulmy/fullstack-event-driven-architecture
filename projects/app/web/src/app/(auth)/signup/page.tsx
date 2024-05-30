@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react'
 import { useAtom } from 'jotai'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 // UI imports
 import { IconCheck } from '@packages/ui/build/icons'
@@ -127,6 +128,10 @@ const Signup = () => {
       <button type='submit' disabled={isSubmitting}>
         <IconCheck /> Submit
       </button>
+
+      <p>
+        Already have an account? Click <Link href={routes.login.path}>here</Link> to login.
+      </p>
     </form>
   )
 }
