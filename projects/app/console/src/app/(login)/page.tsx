@@ -27,7 +27,7 @@ const Login = () => {
   const [{ isAuthenticated }, setAuth] = useAtom(userAuth)
   const [isSubmitting, isSubmittingToggle] = useState(false)
   const [user, setUser] = useState({
-    email: isDevelopment() ? 'admin@purro.ai' : '',
+    email: isDevelopment() ? 'admin@example.com' : '',
     password: isDevelopment() ? '123456' : '',
   })
 

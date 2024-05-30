@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: row !important;
   align-items: flex-start !important;
-  cursor: pointer !important;
   background-color: var(--gray-12) !important;
   font-family: var(--font-family) !important;
   font-size: var(--font-size-small) !important;
@@ -27,6 +26,7 @@
   height: 1.2rem;
   width: 1.2rem;
   margin-left: 1rem;
+  cursor: pointer !important;
 }
 .Toastify__toast-body {
   display: flex;

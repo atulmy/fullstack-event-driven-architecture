@@ -1,7 +1,7 @@
 // Routes
 export const routes = {
-  // auth
-  auth: {
+  // login
+  login: {
     path: '/',
   },
 
