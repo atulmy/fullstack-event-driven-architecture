@@ -16,10 +16,10 @@ import { api } from '@/common/config/api'
 import { notify } from '@/common/helpers/utils'
 
 // Component
-const Users = () => {
+const Jobs = () => {
   // state
   const [isRefreshing, isRefreshingToggle] = useState(false)
-  const [users, setUsers] = useState([])
+  const [jobs, setJobs] = useState([])
 
   // effect
   useEffect(() => {
@@ -32,10 +32,10 @@ const Users = () => {
 
     try {
       // api
-      const data = await api.user.adminList.query()
+      const data = await api.job.adminList.query()
 
       if (data.success) {
-        setUsers(data.data)
+        setJobs(data.data)
       } else {
         // notification
         notify({
@@ -57,37 +57,37 @@ const Users = () => {
   // render
   return (
     <div className={style.users}>
-      <h2>Users</h2>
+      <h2>Jobs</h2>
 
       {isRefreshing ? (
         <Loader />
-      ) : users.length ? (
+      ) : jobs.length ? (
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th style={{ width: '14rem' }}>Registered</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>User</th>
+              <th style={{ width: '14rem' }}>Created</th>
             </tr>
           </thead>
 
           <tbody>
-            {users.map((u) => (
-              <tr key={u._id}>
-                <td>{u.name}</td>
-                <td>{u.email}</td>
-                <td>{params.user.roles[u.role].name}</td>
-                <td>{day(u.createdAt).format(params.common.date.format.display)}</td>
+            {jobs.map((j) => (
+              <tr key={j._id}>
+                <td>{params.job.types[j.type].name}</td>
+                <td>{params.job.status[j.status].name}</td>
+                <td>{j.userId.name}</td>
+                <td>{day(j.createdAt).format(params.common.date.format.display)}</td>
               </tr>
             ))}
           </tbody>
         </table>
       ) : (
-        <p>No users found.</p>
+        <p>No jobs found.</p>
       )}
     </div>
   )
 }
 
-export default Users
+export default Jobs

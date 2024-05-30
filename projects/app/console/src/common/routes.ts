@@ -8,10 +8,11 @@ export const routes = {
   // users
   users: {
     path: '/users',
+  },
 
-    save: {
-      path: (userId) => `/users/${userId}`,
-    },
+  // jobs
+  jobs: {
+    path: '/jobs',
   },
 
   // blog

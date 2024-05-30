@@ -96,12 +96,12 @@ export const params = {
     roles: {
       admin: {
         key: 'admin',
-        title: 'Admin',
+        name: 'Admin',
         access: ['admin', 'user'],
       },
       user: {
         key: 'user',
-        title: 'User',
+        name: 'User',
         access: ['user'],
       },
     },

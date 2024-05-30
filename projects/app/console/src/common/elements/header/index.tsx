@@ -51,6 +51,10 @@ export const Header = () => {
           </Link>
 
           <Link href={routes.users.path}>Users</Link>
+
+          <Link href={routes.jobs.path}>Jobs</Link>
+
+          <Link href={routes.blog.path}>Blog</Link>
         </nav>
 
         <nav className={style.right}>
