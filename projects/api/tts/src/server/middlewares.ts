@@ -1,6 +1,9 @@
 // Imports
+import path from 'path'
+import express from 'express'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
+import { fileURLToPath } from 'url'
 
 // Common imports
 import { params } from '@packages/common/build/params.js'
@@ -19,6 +22,17 @@ export function middlewares(app) {
       limit: `${params.common.limits.file}mb`,
       extended: true,
     })
+  )
+
+  app.use(
+    express.static(
+      path.join(
+        path.dirname(fileURLToPath(import.meta.url)),
+        '..',
+        '..',
+        params.common.storage.local
+      )
+    )
   )
 
   // Trust Proxy
