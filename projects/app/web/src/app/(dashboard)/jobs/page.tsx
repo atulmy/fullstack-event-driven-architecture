@@ -86,11 +86,11 @@ const Jobs = () => {
           <table>
             <thead>
               <tr>
-                <th>Type</th>
-                <th>Status</th>
+                <th style={{ width: '9rem' }}>Type</th>
+                <th style={{ width: '8rem' }}>Status</th>
                 <th>Data</th>
                 <th>Result</th>
-                <th style={{ width: '14rem' }}>Created</th>
+                <th style={{ width: '13rem' }}>Created</th>
               </tr>
             </thead>
 
@@ -109,7 +109,7 @@ const Jobs = () => {
                     )}
                   </td>
                   <td>
-                    {j.result && j.result.file && (
+                    {j.result && (
                       <>
                         {j.type === params.job.types.tts.key && (
                           <a href={`${URL_API_TTS}/${j.result.file}`} target='_blank'>

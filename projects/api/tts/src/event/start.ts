@@ -45,7 +45,7 @@ subscriber.subscribe(params.job.types.tts.channels.start, async (event) => {
       }
     }
   } catch (error) {
-    console.log('error execute', error)
+    console.log('error', error)
   }
 
   // redis - publish - finish (failed)
