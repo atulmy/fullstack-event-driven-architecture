@@ -47,7 +47,7 @@ export const create = procedureUser
         )
 
         // websocket
-        // eventEmitter.emit(`job.create.${user._id}`, job.toJSON())
+        eventEmitter.emit(`job.${user._id}`, job.toJSON())
 
         return {
           data: job,

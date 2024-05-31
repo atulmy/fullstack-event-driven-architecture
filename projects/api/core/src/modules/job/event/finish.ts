@@ -20,8 +20,8 @@ subscriber.subscribe(params.job.types.tts.channels.finish, async (event) => {
     const job = await Job.findOne({ _id: jobId }).lean()
 
     if (job) {
-      // websocket
-      eventEmitter.emit(params.job.types.tts.channels.finish, job)
+      // subscription - emit
+      eventEmitter.emit(params.job.subscription.updates(job.userId), job)
     }
   }
 })

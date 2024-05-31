@@ -87,6 +87,10 @@ export const params = {
         },
       },
     },
+
+    subscription: {
+      updates: (userId) => `job.updates.${userId}`,
+    },
   },
 
   // user

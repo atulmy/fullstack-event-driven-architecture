@@ -4,6 +4,7 @@ import './event/index.js'
 import { adminList } from './query/adminList.js'
 import { list } from './query/list.js'
 import { create } from './mutation/create.js'
+import { updates } from './subscription/updates.js'
 
 // router
 export const job = router({
@@ -13,4 +14,7 @@ export const job = router({
 
   // mutation
   create,
+
+  // subscription
+  updates,
 })
