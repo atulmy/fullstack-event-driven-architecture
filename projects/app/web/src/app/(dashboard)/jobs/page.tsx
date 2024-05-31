@@ -13,6 +13,7 @@ import style from './page.module.scss'
 import { params } from '@packages/common/build/params'
 
 // Local imports
+import { URL_API_TTS } from '@/common/config/env'
 import { api } from '@/common/config/api'
 import { notify } from '@/common/helpers/utils'
 import { userAuth } from '@/modules/user/state/auth'
@@ -87,6 +88,7 @@ const Jobs = () => {
               <tr>
                 <th>Type</th>
                 <th>Status</th>
+                <th>Result</th>
                 <th style={{ width: '14rem' }}>Created</th>
               </tr>
             </thead>
@@ -96,6 +98,17 @@ const Jobs = () => {
                 <tr key={j._id}>
                   <td>{params.job.types[j.type].name}</td>
                   <td>{params.job.status[j.status].name}</td>
+                  <td>
+                    {j.result && j.result.file && (
+                      <>
+                        {j.type === params.job.types.tts.key && (
+                          <a href={`${URL_API_TTS}/${j.result.file}`} target='_blank'>
+                            {j.result.file}
+                          </a>
+                        )}
+                      </>
+                    )}
+                  </td>
                   <td>{day(j.createdAt).format(params.common.date.format.display)}</td>
                 </tr>
               ))}
