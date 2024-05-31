@@ -29,6 +29,10 @@ const Jobs = () => {
   useEffect(() => {
     refresh()
 
+    try {
+      Notification.requestPermission().then(() => {})
+    } catch (error) {}
+
     // subscribe
     const connection = api.job.updates.subscribe(
       { token: auth.token },
@@ -37,6 +41,14 @@ const Jobs = () => {
           console.log('job', job)
 
           setJobs((jobs) => [job, ...[...jobs].filter((t) => t._id !== job._id)])
+
+          try {
+            new Notification(params.site.name, {
+              body: `${params.job.types[job.type].name} job is now ${params.job.status[job.status].name}.`,
+            })
+          } catch (error) {
+            console.log('error', error)
+          }
         },
       }
     )
