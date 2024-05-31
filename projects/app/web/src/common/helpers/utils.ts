@@ -2,7 +2,7 @@
 import { toast } from '@packages/ui/build/toast'
 
 // Local imports
-import { ENV } from '@/common/config/env'
+import { ENV, URL_API_CORE } from '@/common/config/env'
 
 // Check development env
 export function isDevelopment() {
@@ -19,4 +19,12 @@ export function notify({
   toast(message, {
     autoClose: autoClose > 0 ? autoClose : success ? 3500 : 10000,
   })
+}
+
+// Upload file
+export function upload(data) {
+  return fetch(`${URL_API_CORE}/upload`, {
+    method: 'POST',
+    body: data,
+  }).then((response) => response.json())
 }

@@ -13,7 +13,7 @@ import style from './page.module.scss'
 import { params } from '@packages/common/build/params'
 
 // Local imports
-import { URL_API_TTS } from '@/common/config/env'
+import { URL_API_CORE, URL_API_TTS } from '@/common/config/env'
 import { api } from '@/common/config/api'
 import { notify } from '@/common/helpers/utils'
 import { userAuth } from '@/modules/user/state/auth'
@@ -88,6 +88,7 @@ const Jobs = () => {
               <tr>
                 <th>Type</th>
                 <th>Status</th>
+                <th>Data</th>
                 <th>Result</th>
                 <th style={{ width: '14rem' }}>Created</th>
               </tr>
@@ -99,6 +100,15 @@ const Jobs = () => {
                   <td>{params.job.types[j.type].name}</td>
                   <td>{params.job.status[j.status].name}</td>
                   <td>
+                    {j.type === params.job.types.tts.key && <p>{j.data.text}</p>}
+
+                    {j.type === params.job.types.stt.key && (
+                      <a href={`${URL_API_CORE}/${j.data.file}`} target='_blank'>
+                        {j.data.file}
+                      </a>
+                    )}
+                  </td>
+                  <td>
                     {j.result && j.result.file && (
                       <>
                         {j.type === params.job.types.tts.key && (
@@ -106,6 +116,8 @@ const Jobs = () => {
                             {j.result.file}
                           </a>
                         )}
+
+                        {j.type === params.job.types.stt.key && <p>{j.result.text}</p>}
                       </>
                     )}
                   </td>

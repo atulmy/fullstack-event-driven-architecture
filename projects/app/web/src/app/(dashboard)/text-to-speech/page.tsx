@@ -79,9 +79,11 @@ const TextToSpeech = () => {
           </em>
         </label>
 
-        <button type='submit' disabled={isSubmitting}>
-          <IconCheck /> Submit
-        </button>
+        <div>
+          <button type='submit' disabled={isSubmitting}>
+            <IconCheck /> Submit
+          </button>
+        </div>
       </form>
     </div>
   )

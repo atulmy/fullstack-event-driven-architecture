@@ -1,9 +1,9 @@
 // Imports
 import path from 'path'
+import { fileURLToPath } from 'url'
 import express from 'express'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
-import { fileURLToPath } from 'url'
 
 // Common imports
 import { params } from '@packages/common/build/params.js'
@@ -24,6 +24,7 @@ export function middlewares(app) {
     })
   )
 
+  // storage
   app.use(
     express.static(
       path.join(

@@ -1,4 +1,7 @@
 // Imports
+import path from 'path'
+import { fileURLToPath } from 'url'
+import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
@@ -23,6 +26,18 @@ export function middlewares(app) {
       limit: `${params.common.limits.file}mb`,
       extended: true,
     })
+  )
+
+  // storage
+  app.use(
+    express.static(
+      path.join(
+        path.dirname(fileURLToPath(import.meta.url)),
+        '..',
+        '..',
+        params.common.storage.local
+      )
+    )
   )
 
   // Trust Proxy

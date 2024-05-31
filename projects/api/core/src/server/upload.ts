@@ -1,7 +1,7 @@
 // Imports
 import path from 'path'
 import Multer from 'multer'
-import mongoose from 'mongoose'
+import dayjs from 'dayjs'
 
 // Common imports
 import { params } from '@packages/common/build/params.js'
@@ -17,10 +17,7 @@ export function upload(app) {
         cb(null, params.common.storage.local)
       },
       filename: function (req, file, cb) {
-        cb(
-          null,
-          `${new mongoose.Types.ObjectId()}` + path.extname(file.originalname).toLocaleLowerCase()
-        )
+        cb(null, `${dayjs().valueOf()}` + path.extname(file.originalname).toLocaleLowerCase())
       },
     }),
   })
@@ -33,7 +30,7 @@ export function upload(app) {
         return response.status(200).json({
           success: true,
           message: 'File uploaded successfully.',
-          data: {},
+          data: file.filename,
         })
       } else {
         return response.status(400).json({
