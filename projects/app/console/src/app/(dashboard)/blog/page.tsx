@@ -2,10 +2,12 @@
 
 // Imports
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import day from 'dayjs'
 
 // UI imports
 import { Loader } from '@packages/ui/build/loader'
+import { IconAdd } from '@packages/ui/build/icons'
 import style from './page.module.scss'
 
 // Common imports
@@ -14,6 +16,7 @@ import { params } from '@packages/common/build/params'
 // Local imports
 import { api } from '@/common/config/api'
 import { notify } from '@/common/helpers/utils'
+import { routes } from '@/common/routes'
 
 // Component
 const Blog = () => {
@@ -57,11 +60,12 @@ const Blog = () => {
   // render
   return (
     <div className={style.blog}>
-      <h2>Blog</h2>
-
-      <p>
-        <a href={'/'}>Create</a>
-      </p>
+      <h2>
+        Blog
+        <Link href={routes.blog.save.path()}>
+          <IconAdd />
+        </Link>
+      </h2>
 
       {isRefreshing ? (
         <Loader />

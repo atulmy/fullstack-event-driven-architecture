@@ -6,6 +6,9 @@ import Link from 'next/link'
 import { useAtom } from 'jotai'
 import { useRouter } from 'next/navigation'
 
+// Common imports
+import { params } from '@packages/common/build/params'
+
 // UI imports
 import { Alert } from '@packages/ui/build/alert'
 import { IconRocket } from '@packages/ui/build/icons'
@@ -14,7 +17,6 @@ import style from './style.module.scss'
 // Local imports
 import { userAuth, initial } from '@/modules/user/state/auth'
 import { routes } from '@/common/routes'
-import { params } from '@packages/common/build/params'
 
 // Component
 export const Header = () => {

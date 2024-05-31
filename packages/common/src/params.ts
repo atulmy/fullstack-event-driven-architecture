@@ -5,7 +5,7 @@ export const params = {
     name: 'Fullstack',
     tagline: 'Full-Stack Event Driven Architecture',
     description:
-      'Full-stack event driven and highly scalable architecture using Node, React, Redis, MongoDB, and Docker.',
+      'Full-stack monorepo based, event driven, highly scalable architecture using Node, React, Redis, MongoDB, and Docker.',
 
     projects: {
       api: {

@@ -1,6 +1,7 @@
 // material
 import {
   Add as IconAdd,
+  ArrowBack as IconArrowBack,
   Close as IconClose,
   Check as IconCheck,
   Rocket as IconRocket,
@@ -10,6 +11,7 @@ import {
 export {
   // material
   IconAdd,
+  IconArrowBack,
   IconClose,
   IconCheck,
   IconRocket,
