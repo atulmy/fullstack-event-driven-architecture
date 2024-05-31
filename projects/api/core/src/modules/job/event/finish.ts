@@ -3,14 +3,11 @@ import { params } from '@packages/common/build/params.js'
 import { Job } from '@packages/model/build/job/model.js'
 
 // App imports
-import { subscriber } from '../../../server/redis.js'
-import { eventEmitter } from '../../../common/config/event.js'
+import { subscriber, publisher } from '../../../server/redis.js'
 
 // subscribe - start
 subscriber.subscribe(params.job.types.tts.channels.finish, async (event) => {
   const { jobId, status, file } = JSON.parse(event)
-
-  console.log('tts.finish jobId', jobId, status, file)
 
   // Job - update
   const updated = await Job.updateOne({ _id: jobId }, { $set: { status, result: { file } } })
@@ -20,8 +17,14 @@ subscriber.subscribe(params.job.types.tts.channels.finish, async (event) => {
     const job = await Job.findOne({ _id: jobId }).lean()
 
     if (job) {
-      // subscription - emit
-      eventEmitter.emit(params.job.subscription.updates(job.userId), job)
+      // redis - publish (emit in all server instances)
+      await publisher.publish(
+        params.site.projects.api.core,
+        JSON.stringify({
+          type: params.job.subscription.updates(job.userId),
+          payload: job,
+        })
+      )
     }
   }
 })

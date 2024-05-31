@@ -29,8 +29,6 @@ export function upload(app) {
     try {
       const file = request.file
 
-      console.log('request', request)
-
       if (file.mimetype === 'audio/mpeg') {
         return response.status(200).json({
           success: true,

@@ -18,15 +18,15 @@ export const updates = procedurePublic
     })
   )
   .subscription(async ({ input }) => {
-    console.log('input', input)
-
     const token = jwt.verify(input.token, SECURITY_SECRET)
 
     return observable((emit) => {
-      eventEmitter.on(params.job.subscription.updates(token.id), emit.next)
+      const event = params.job.subscription.updates(token.id)
+
+      eventEmitter.on(event, emit.next)
 
       return () => {
-        eventEmitter.off(params.job.subscription.updates(token.id), emit.next)
+        eventEmitter.off(event, emit.next)
       }
     })
   })

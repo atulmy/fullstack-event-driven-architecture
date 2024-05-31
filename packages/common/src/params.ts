@@ -6,6 +6,12 @@ export const params = {
     tagline: 'Full-Stack Event Driven Architecture',
     description:
       'Full-stack event driven and highly scalable architecture using Node, React, Redis, MongoDB, and Docker.',
+
+    projects: {
+      api: {
+        core: 'api.core',
+      },
+    },
   },
 
   // common

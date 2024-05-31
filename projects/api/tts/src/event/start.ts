@@ -14,8 +14,6 @@ import { storageFilePath } from '../common/helpers/utils.js'
 subscriber.subscribe(params.job.types.tts.channels.start, async (event) => {
   const { jobId, data } = JSON.parse(event)
 
-  console.log('tts.start jobId', jobId)
-
   try {
     if (jobId && data && data.text) {
       // openai - tts
