@@ -18,6 +18,8 @@ export const updates = procedurePublic
     })
   )
   .subscription(async ({ input }) => {
+    console.log('input', input)
+
     const token = jwt.verify(input.token, SECURITY_SECRET)
 
     return observable((emit) => {

@@ -42,7 +42,7 @@ const TextToSpeech = () => {
       })
 
       if (data && data.success) {
-        // router.push(routes.jobs.path)
+        router.push(routes.jobs.path)
       }
     } catch (error) {
       console.log(error)

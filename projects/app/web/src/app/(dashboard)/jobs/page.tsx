@@ -2,6 +2,7 @@
 
 // Imports
 import { useState, useEffect } from 'react'
+import { useAtomValue } from 'jotai'
 import day from 'dayjs'
 
 // UI imports
@@ -14,16 +15,34 @@ import { params } from '@packages/common/build/params'
 // Local imports
 import { api } from '@/common/config/api'
 import { notify } from '@/common/helpers/utils'
+import { userAuth } from '@/modules/user/state/auth'
 
 // Component
 const Jobs = () => {
   // state
+  const auth = useAtomValue(userAuth)
   const [isRefreshing, isRefreshingToggle] = useState(false)
   const [jobs, setJobs] = useState([])
 
   // effect
   useEffect(() => {
     refresh()
+
+    // subscribe
+    const connection = api.job.updates.subscribe(
+      { token: auth.token },
+      {
+        onData: (job: any) => {
+          console.log('job', job)
+
+          setJobs((jobs) => [job, ...[...jobs].filter((t) => t._id !== job._id)])
+        },
+      }
+    )
+
+    return () => {
+      connection.unsubscribe()
+    }
   }, [])
 
   // refresh
