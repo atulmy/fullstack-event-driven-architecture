@@ -68,7 +68,7 @@ const Users = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
-              <th style={{ width: '14rem' }}>Registered</th>
+              <th style={{ width: '12rem' }}>Registered</th>
             </tr>
           </thead>
 
@@ -78,7 +78,7 @@ const Users = () => {
                 <td>{u.name}</td>
                 <td>{u.email}</td>
                 <td>{params.user.roles[u.role].name}</td>
-                <td>{day(u.createdAt).format(params.common.date.format.display)}</td>
+                <td>{day(u.createdAt).format(params.common.date.format.full)}</td>
               </tr>
             ))}
           </tbody>

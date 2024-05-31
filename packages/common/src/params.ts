@@ -29,6 +29,7 @@ export const params = {
       format: {
         basic: 'YYYY-MM-DD',
         display: 'MMM D, YYYY, hh:mm a',
+        full: 'YYYY-MM-DD hh:mm a',
       },
     },
 

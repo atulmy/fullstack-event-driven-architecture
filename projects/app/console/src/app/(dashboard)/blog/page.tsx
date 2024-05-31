@@ -16,10 +16,10 @@ import { api } from '@/common/config/api'
 import { notify } from '@/common/helpers/utils'
 
 // Component
-const Jobs = () => {
+const Blog = () => {
   // state
   const [isRefreshing, isRefreshingToggle] = useState(false)
-  const [jobs, setJobs] = useState([])
+  const [blog, setBlog] = useState([])
 
   // effect
   useEffect(() => {
@@ -32,10 +32,10 @@ const Jobs = () => {
 
     try {
       // api
-      const data = await api.job.adminList.query()
+      const data = await api.blog.adminList.query()
 
       if (data.success) {
-        setJobs(data.data)
+        setBlog(data.data)
       } else {
         // notification
         notify({
@@ -56,38 +56,40 @@ const Jobs = () => {
 
   // render
   return (
-    <div className={style.users}>
-      <h2>Jobs</h2>
+    <div className={style.blog}>
+      <h2>Blog</h2>
+
+      <p>
+        <a href={'/'}>Create</a>
+      </p>
 
       {isRefreshing ? (
         <Loader />
-      ) : jobs.length ? (
+      ) : blog.length ? (
         <table>
           <thead>
             <tr>
-              <th>Type</th>
-              <th>Status</th>
-              <th>User</th>
+              <th>Title</th>
               <th style={{ width: '12rem' }}>Created</th>
+              <th style={{ width: '12rem' }}>Updated</th>
             </tr>
           </thead>
 
           <tbody>
-            {jobs.map((j) => (
-              <tr key={j._id}>
-                <td>{params.job.types[j.type].name}</td>
-                <td>{params.job.status[j.status].name}</td>
-                <td>{j.userId.name}</td>
-                <td>{day(j.createdAt).format(params.common.date.format.full)}</td>
+            {blog.map((b) => (
+              <tr key={b._id}>
+                <td>{b.title}</td>
+                <td>{day(b.createdAt).format(params.common.date.format.full)}</td>
+                <td>{day(b.updatedAt).format(params.common.date.format.full)}</td>
               </tr>
             ))}
           </tbody>
         </table>
       ) : (
-        <p>No jobs found.</p>
+        <p>No blog found.</p>
       )}
     </div>
   )
 }
 
-export default Jobs
+export default Blog
