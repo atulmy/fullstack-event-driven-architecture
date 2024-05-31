@@ -75,8 +75,8 @@ const Jobs = () => {
             <tbody>
               {jobs.map((j) => (
                 <tr key={j._id}>
-                  <td>{j.type}</td>
-                  <td>{j.status}</td>
+                  <td>{params.job.types[j.type].name}</td>
+                  <td>{params.job.status[j.status].name}</td>
                   <td>{day(j.createdAt).format(params.common.date.format.display)}</td>
                 </tr>
               ))}
