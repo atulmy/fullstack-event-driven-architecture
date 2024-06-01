@@ -42,7 +42,7 @@ export const params = {
     },
 
     pagination: {
-      default: 10,
+      default: 50,
     },
 
     error: {

@@ -138,7 +138,7 @@ const Save = ({ params: { blogId } }) => {
               onChange={onChange}
               required
               placeholder='Enter content'
-              rows={5}
+              rows={7}
             ></textarea>
           </label>
 
