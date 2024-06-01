@@ -3,24 +3,20 @@ import { TRPCError } from '@trpc/server'
 
 // Common imports
 import { params } from '@packages/common/build/params.js'
-import { Job } from '@packages/model/build/job/model.js'
+import { Blog } from '@packages/model/build/blog/model.js'
 
 // Local imports
-import { procedureUser } from '../../../server/rpc.js'
+import { procedurePublic } from '../../../server/rpc.js'
 
 // procedure
-export const list = procedureUser.query(async ({ ctx }) => {
+export const list = procedurePublic.query(async () => {
   try {
-    // auth
-    const { user } = ctx.auth
-
-    // Job - latest 100
-    const data = await Job.find({
-      userId: user._id,
+    // Blog
+    const data = await Blog.find({
+      isDeleted: false,
     })
-      .select(['_id', 'type', 'status', 'data', 'result', 'createdAt'])
+      .select(['_id', 'title', 'slug', 'content', 'createdAt'])
       .sort({ _id: -1 })
-      .limit(100)
       .lean()
 
     return {

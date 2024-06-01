@@ -15,6 +15,7 @@ import { params } from '@packages/common/build/params'
 // Local imports
 import { URL_APP_WEB } from '@/common/config/env'
 import { Wrapper } from '@/common/elements/wrapper'
+import { CallToAction } from '@/common/elements/cta'
 
 // Component
 const Home = () => (
@@ -65,7 +66,7 @@ const Home = () => (
       <div className={style.list}>
         <div className={style.item}>
           <aside>
-            <h3>Text to Speech</h3>
+            <h3>Text-to-Speech</h3>
             <p>
               The text-to-speech feature converts written text into spoken audio, enhancing
               accessibility and user interaction.
@@ -79,7 +80,7 @@ const Home = () => (
 
         <div className={style.item}>
           <aside>
-            <h3>Speech to Text</h3>
+            <h3>Speech-to-Text</h3>
             <p>
               The speech-to-text feature transcribes spoken language into written text, enabling
               voice-based input and interaction.
@@ -93,7 +94,7 @@ const Home = () => (
 
         <div className={style.item}>
           <aside>
-            <h3>Jobs</h3>
+            <h3>Tracking</h3>
             <p>
               Real-time tracking of jobs provides instant updates on job status and progress,
               ensuring timely monitoring and management.
@@ -106,6 +107,9 @@ const Home = () => (
         </div>
       </div>
     </Wrapper>
+
+    {/* call to action */}
+    <CallToAction />
   </div>
 )
 

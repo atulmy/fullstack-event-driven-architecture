@@ -20,7 +20,7 @@ import { routes } from '@/common/routes'
 export const Footer = () => (
   <footer className={style.footer}>
     <Wrapper>
-      <div className={style.columns}>
+      <div className={style.contents}>
         <nav>
           <Link href={routes.home.path} className={style.brand}>
             <IconRocket />
