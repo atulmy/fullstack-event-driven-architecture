@@ -11,6 +11,7 @@ import { params } from '@packages/common/build/params'
 
 // Local imports
 import { Header } from '@/common/elements/header'
+import { Footer } from '@/common/elements/footer'
 
 // Component
 const Layout = ({ children }) => {
@@ -26,6 +27,8 @@ const Layout = ({ children }) => {
         <Header />
 
         <main className={style.main}>{children}</main>
+
+        <Footer />
 
         <ToastContainer hideProgressBar={true} transition={Zoom} position='top-center' stacked />
       </body>
