@@ -1,14 +1,52 @@
-.body {
+.home {
   display: flex;
   flex-direction: column;
   flex: 1;
-  overflow: hidden;
 
-  .main {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    gap: 1rem;
+
+    h1,
+    h2 {
+      text-align: center;
+      max-width: 50rem;
+    }
+
+    h2 {
+      color: var(--gray-11);
+      font-weight: var(--font-weight-regular);
+      margin-bottom: 1rem;
+    }
+  }
+
+  .features {
     display: flex;
     flex-direction: row;
-    flex: 1;
-    padding: 0.5rem 2rem 1.5rem 2rem;
-    overflow: hidden;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    gap: 2rem;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      background-color: var(--blue-2);
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+
+      h2 {
+        color: var(--gray-12);
+      }
+
+      p {
+        color: var(--gray-12);
+      }
+    }
   }
 }

@@ -19,39 +19,49 @@ import { routes } from '@/common/routes'
 // Component
 export const Footer = () => (
   <footer className={style.footer}>
-    <Wrapper className={style.wrapper}>
-      <nav>
-        <Link href={routes.home.path} className={style.brand}>
-          <IconRocket />
-          {params.site.name}
-        </Link>
-        <em>{params.site.tagline}.</em>
-        <em>&copy; 2024</em>
-      </nav>
+    <Wrapper>
+      <div className={style.columns}>
+        <nav>
+          <Link href={routes.home.path} className={style.brand}>
+            <IconRocket />
+            {params.site.name}
+          </Link>
+          <em>{params.site.tagline}.</em>
+          <em>&copy; 2024</em>
+        </nav>
 
-      <nav>
-        <label>Product</label>
-        <Link href={routes.features.path}>Features</Link>
-        <Link href={routes.blog.path}>Blog</Link>
-      </nav>
+        <nav>
+          <label>Product</label>
+          <Link href={routes.features.path}>Features</Link>
+          <Link href={routes.blog.path}>Blog</Link>
+        </nav>
 
-      <nav>
-        <label>Get started</label>
-        <Link href={URL_APP_WEB} target='_blank'>
-          Login
-        </Link>
-        <Link href={`${URL_APP_WEB}/signup`} target='_blank'>
-          Signup
-        </Link>
-      </nav>
+        <nav>
+          <label>Get started</label>
+          <Link href={URL_APP_WEB} target='_blank'>
+            Login
+          </Link>
+          <Link href={`${URL_APP_WEB}/signup`} target='_blank'>
+            Signup
+          </Link>
+        </nav>
 
-      <nav>
-        <label>Social</label>
-        <a target='_blank'>Email</a>
-        <a target='_blank'>Facebook</a>
-        <a target='_blank'>Instagram</a>
-        <a target='_blank'>Twitter</a>
-      </nav>
+        <nav>
+          <label>Social</label>
+          <a href='mailto:hello@example.com' target='_blank'>
+            Email
+          </a>
+          <a href='https://facebook.com' target='_blank'>
+            Facebook
+          </a>
+          <a href='https://instagram.com' target='_blank'>
+            Instagram
+          </a>
+          <a href='https://x.com' target='_blank'>
+            X (Twitter)
+          </a>
+        </nav>
+      </div>
     </Wrapper>
   </footer>
 )
