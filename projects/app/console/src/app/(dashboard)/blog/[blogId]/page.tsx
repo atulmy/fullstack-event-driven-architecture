@@ -10,9 +10,6 @@ import { Loader } from '@packages/ui/build/loader'
 import { IconArrowBack, IconCheck } from '@packages/ui/build/icons'
 import style from './page.module.scss'
 
-// Common imports
-import { params } from '@packages/common/build/params'
-
 // Local imports
 import { api } from '@/common/config/api'
 import { isDevelopment, notify } from '@/common/helpers/utils'
@@ -117,35 +114,39 @@ const Save = ({ params: { blogId } }) => {
         Blog {blogId && blogId !== 'create' ? 'edit' : 'create'}
       </h2>
 
-      <form onSubmit={onSubmit}>
-        <label>
-          Title
-          <input
-            name='title'
-            value={blog.title}
-            onChange={onChange}
-            required
-            placeholder='Enter title'
-            autoFocus
-          />
-        </label>
+      {isRefreshing ? (
+        <Loader />
+      ) : (
+        <form onSubmit={onSubmit}>
+          <label>
+            Title
+            <input
+              name='title'
+              value={blog.title}
+              onChange={onChange}
+              required
+              placeholder='Enter title'
+              autoFocus
+            />
+          </label>
 
-        <label>
-          Content
-          <textarea
-            name='content'
-            value={blog.content}
-            onChange={onChange}
-            required
-            placeholder='Enter content'
-            rows={5}
-          ></textarea>
-        </label>
+          <label>
+            Content
+            <textarea
+              name='content'
+              value={blog.content}
+              onChange={onChange}
+              required
+              placeholder='Enter content'
+              rows={5}
+            ></textarea>
+          </label>
 
-        <button type='submit' disabled={isSubmitting}>
-          <IconCheck /> Submit
-        </button>
-      </form>
+          <button type='submit' disabled={isSubmitting}>
+            <IconCheck /> Submit
+          </button>
+        </form>
+      )}
     </div>
   )
 }
