@@ -7,22 +7,31 @@ import Link from 'next/link'
 
 // UI imports
 import { Loader } from '@packages/ui/build/loader'
-import { IconArrowBack } from '@packages/ui/build/icons'
+import { IconArrowBack, IconCheck } from '@packages/ui/build/icons'
 import style from './page.module.scss'
 
-// App imports
+// Common imports
+import { params } from '@packages/common/build/params'
+
+// Local imports
 import { api } from '@/common/config/api'
-import { notify } from '@/common/helpers/utils'
+import { isDevelopment, notify } from '@/common/helpers/utils'
 import { routes } from '@/common/routes'
 
 // Component
-const Page = ({ params: { blogId } }) => {
+const Save = ({ params: { blogId } }) => {
   // router
   const router = useRouter()
 
   // state
   const [isRefreshing, isRefreshingToggle] = useState(false)
   const [isSubmitting, isSubmittingToggle] = useState(false)
+  const [blog, setBlog] = useState({
+    title: isDevelopment() ? 'Benefits of Yoga' : '',
+    content: isDevelopment()
+      ? `1. Yoga improves strength\n2. Back pain relief\n3. Ease arthritis symptoms\n4. Benefits heart health\n5. Helps you sleep better`
+      : '',
+  })
 
   // effect
   useEffect(() => {
@@ -40,8 +49,7 @@ const Page = ({ params: { blogId } }) => {
       const data = await api.blog.adminDetail.query({ blogId })
 
       if (data.success) {
-        // @ts-ignore
-        setPage(data.data)
+        setBlog(data.data)
       } else {
         // notification
         notify({
@@ -70,6 +78,8 @@ const Page = ({ params: { blogId } }) => {
       // api
       const data = await api.blog.adminSave.mutate(blog)
 
+      isSubmittingToggle(false)
+
       // notification
       notify({
         success: data.success,
@@ -82,29 +92,62 @@ const Page = ({ params: { blogId } }) => {
     } catch (error) {
       console.log(error)
 
+      isSubmittingToggle(false)
+
       // notification
       notify({
         success: false,
         message: error.message,
       })
-    } finally {
-      isSubmittingToggle(false)
     }
+  }
+
+  // on change
+  const onChange = (event) => {
+    setBlog((blog) => ({ ...blog, [event.target.name]: event.target.value }))
   }
 
   // render
   return (
-    <div className={style.blog}>
+    <div className={style.save}>
       <h2>
         <Link href={routes.blog.path}>
           <IconArrowBack />
-        </Link>{' '}
+        </Link>
         Blog {blogId && blogId !== 'create' ? 'edit' : 'create'}
       </h2>
 
-      <form onSubmit={onSubmit}>form</form>
+      <form onSubmit={onSubmit}>
+        <label>
+          Title
+          <input
+            name='title'
+            value={blog.title}
+            onChange={onChange}
+            required
+            placeholder='Enter title'
+            autoFocus
+          />
+        </label>
+
+        <label>
+          Content
+          <textarea
+            name='content'
+            value={blog.content}
+            onChange={onChange}
+            required
+            placeholder='Enter content'
+            rows={5}
+          ></textarea>
+        </label>
+
+        <button type='submit' disabled={isSubmitting}>
+          <IconCheck /> Submit
+        </button>
+      </form>
     </div>
   )
 }
 
-export default Page
+export default Save

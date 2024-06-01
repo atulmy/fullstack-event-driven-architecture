@@ -16,7 +16,7 @@ import { api } from '@/common/config/api'
 import { notify } from '@/common/helpers/utils'
 
 // Component
-const Users = () => {
+const List = () => {
   // state
   const [isRefreshing, isRefreshingToggle] = useState(false)
   const [users, setUsers] = useState([])
@@ -56,7 +56,7 @@ const Users = () => {
 
   // render
   return (
-    <div className={style.users}>
+    <div className={style.list}>
       <h2>Users</h2>
 
       {isRefreshing ? (
@@ -90,4 +90,4 @@ const Users = () => {
   )
 }
 
-export default Users
+export default List

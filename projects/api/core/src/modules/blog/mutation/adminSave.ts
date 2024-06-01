@@ -1,58 +1,51 @@
 // Imports
 import { TRPCError } from '@trpc/server'
-import bcrypt from 'bcrypt'
 import { z } from 'zod'
 
 // Common imports
 import { params } from '@packages/common/build/params.js'
-import { emailClean } from '@packages/common/build/utils.js'
-import { User } from '@packages/model/build/user/model.js'
+import { slugify } from '@packages/common/build/utils.js'
+import { Blog } from '@packages/model/build/blog/model.js'
 
 // Local imports
-import { procedurePublic } from '../../../server/rpc.js'
-import { SECURITY_SALT_ROUNDS } from '../../../common/config/env.js'
+import { procedureAdmin } from '../../../server/rpc.js'
 
 // procedure
-export const authSignup = procedurePublic
+export const adminSave = procedureAdmin
   .input(
     z.object({
-      email: z.string(),
-      password: z.string(),
-      name: z.string(),
+      _id: z.string().optional(),
+      title: z.string(),
+      content: z.string(),
     })
   )
   .mutation(async ({ input }) => {
     try {
-      const email = emailClean(input.email)
-      const password = input.password.trim()
-      const name = input.name.trim()
+      // inputs
+      const _id = input._id
+      const title = input.title.trim()
+      const content = input.content.trim()
 
-      // User
-      const check = await User.findOne({ email, isDeleted: false }).lean()
-
-      if (check) {
-        return {
-          success: false,
-          message: `Account already exists with this email, please login to continue.`,
-        }
-      } else {
-        // User - create
-        const user = await User.create({
-          email,
-          password: await bcrypt.hash(`${password}`, SECURITY_SALT_ROUNDS),
-          name,
-          role: params.user.roles.user.key,
-        })
-
-        if (user) {
-          return {
-            success: true,
-            message: `Registered successfully, please login to continue.`,
-          }
-        }
+      const fields = {
+        title,
+        content,
       }
 
-      throw new Error('Sorry, unable to create an account, please try again.')
+      let data
+
+      if (_id) {
+        // Blog - update
+        data = await Blog.updateOne({ _id }, { $set: fields })
+      } else {
+        // Blog - create
+        data = await Blog.create({ ...fields, slug: slugify(title) })
+      }
+
+      return {
+        data,
+        success: true,
+        message: 'Blog has been saved successfully.',
+      }
     } catch (error) {
       console.log('error', error)
 

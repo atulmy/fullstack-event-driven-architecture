@@ -111,7 +111,6 @@ const Login = () => {
             onChange={onChange}
             required
             placeholder='Enter password'
-            className='animation fade-in'
             maxLength={params.common.limits.password}
           />
         </label>

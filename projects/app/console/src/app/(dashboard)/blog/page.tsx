@@ -19,7 +19,7 @@ import { notify } from '@/common/helpers/utils'
 import { routes } from '@/common/routes'
 
 // Component
-const Blog = () => {
+const List = () => {
   // state
   const [isRefreshing, isRefreshingToggle] = useState(false)
   const [blog, setBlog] = useState([])
@@ -59,7 +59,7 @@ const Blog = () => {
 
   // render
   return (
-    <div className={style.blog}>
+    <div className={style.list}>
       <h2>
         Blog
         <Link href={routes.blog.save.path()}>
@@ -82,7 +82,9 @@ const Blog = () => {
           <tbody>
             {blog.map((b) => (
               <tr key={b._id}>
-                <td>{b.title}</td>
+                <td>
+                  <Link href={routes.blog.save.path(b._id)}>{b.title}</Link>
+                </td>
                 <td>{day(b.createdAt).format(params.common.date.format.full)}</td>
                 <td>{day(b.updatedAt).format(params.common.date.format.full)}</td>
               </tr>
@@ -90,10 +92,12 @@ const Blog = () => {
           </tbody>
         </table>
       ) : (
-        <p>No blog found.</p>
+        <p>
+          No blog found. <Link href={routes.blog.save.path()}>Create</Link> a new blog.
+        </p>
       )}
     </div>
   )
 }
 
-export default Blog
+export default List

@@ -16,7 +16,7 @@ import { api } from '@/common/config/api'
 import { notify } from '@/common/helpers/utils'
 
 // Component
-const Jobs = () => {
+const List = () => {
   // state
   const [isRefreshing, isRefreshingToggle] = useState(false)
   const [jobs, setJobs] = useState([])
@@ -56,7 +56,7 @@ const Jobs = () => {
 
   // render
   return (
-    <div className={style.users}>
+    <div className={style.list}>
       <h2>Jobs</h2>
 
       {isRefreshing ? (
@@ -90,4 +90,4 @@ const Jobs = () => {
   )
 }
 
-export default Jobs
+export default List
