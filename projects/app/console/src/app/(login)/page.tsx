@@ -86,7 +86,7 @@ const Login = () => {
   return (
     <div className={style.login}>
       <form onSubmit={onSubmit}>
-        <h2>Console login</h2>
+        <h5>Console login</h5>
 
         <label>
           Email

@@ -78,7 +78,7 @@ const Login = () => {
   // render
   return (
     <form onSubmit={onSubmit}>
-      <h2>Login</h2>
+      <h5>Login</h5>
 
       <label>
         Email

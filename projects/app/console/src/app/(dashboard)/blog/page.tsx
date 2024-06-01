@@ -60,12 +60,12 @@ const List = () => {
   // render
   return (
     <div className={style.list}>
-      <h2>
+      <h5>
         Blog
         <Link href={routes.blog.save.path()}>
           <IconAdd />
         </Link>
-      </h2>
+      </h5>
 
       {isRefreshing ? (
         <Loader />

@@ -83,7 +83,7 @@ const SpeechToText = () => {
   // render
   return (
     <div className={style.tts}>
-      <h2>Speech to Text</h2>
+      <h5>Speech to Text</h5>
 
       <form onSubmit={onSubmit}>
         <label>

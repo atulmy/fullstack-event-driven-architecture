@@ -6,6 +6,7 @@ import { useAtomValue } from 'jotai'
 import { useRouter } from 'next/navigation'
 
 // UI imports
+import { IconRocket } from '@packages/ui/build/icons'
 import style from './layout.module.scss'
 
 // Local imports
@@ -41,8 +42,10 @@ const Layout = ({ children }) => {
       </div>
 
       <div className={style.right}>
-        <h1>{params.site.tagline}</h1>
-        <p>{params.site.description}</p>
+        <IconRocket />
+
+        <h4>{params.site.tagline}</h4>
+        <h6>{params.site.description}</h6>
       </div>
     </div>
   )

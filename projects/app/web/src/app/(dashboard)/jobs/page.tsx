@@ -89,7 +89,7 @@ const Jobs = () => {
   // render
   return (
     <div className={style.jobs}>
-      <h2>Jobs</h2>
+      <h5>Jobs</h5>
 
       {isRefreshing ? (
         <Loader />

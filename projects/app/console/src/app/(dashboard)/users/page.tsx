@@ -57,7 +57,7 @@ const List = () => {
   // render
   return (
     <div className={style.list}>
-      <h2>Users</h2>
+      <h5>Users</h5>
 
       {isRefreshing ? (
         <Loader />

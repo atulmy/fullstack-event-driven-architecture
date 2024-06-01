@@ -107,12 +107,12 @@ const Save = ({ params: { blogId } }) => {
   // render
   return (
     <div className={style.save}>
-      <h2>
+      <h5>
         <Link href={routes.blog.path}>
           <IconArrowBack />
         </Link>
         Blog {blogId && blogId !== 'create' ? 'edit' : 'create'}
-      </h2>
+      </h5>
 
       {isRefreshing ? (
         <Loader />

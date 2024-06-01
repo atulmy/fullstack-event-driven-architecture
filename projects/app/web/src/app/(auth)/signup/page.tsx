@@ -84,7 +84,7 @@ const Signup = () => {
   // render
   return (
     <form onSubmit={onSubmit}>
-      <h2>Signup</h2>
+      <h5>Signup</h5>
 
       <label>
         Name
