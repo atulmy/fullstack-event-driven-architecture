@@ -8,8 +8,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
     gap: 1rem;
 
     h1,
@@ -22,14 +22,15 @@
       color: var(--gray-11);
       font-weight: var(--font-weight-regular);
       margin-bottom: 1rem;
+      font-size: 1.5rem;
     }
   }
 
-  .features {
+  .benefits {
     display: flex;
     flex-direction: row;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
     gap: 2rem;
 
     .item {
@@ -40,12 +41,69 @@
       padding: 1.5rem 2rem;
       border-radius: 1rem;
 
-      h2 {
+      h3 {
         color: var(--gray-12);
       }
 
       p {
         color: var(--gray-12);
+      }
+    }
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    gap: 5rem;
+
+    h2 {
+      text-align: center;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
+      .item {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+
+        aside {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex: 1;
+          gap: 1rem;
+
+          p {
+            color: var(--gray-11);
+            font-size: 1.25rem;
+          }
+        }
+
+        figure {
+          display: flex;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--blue-2);
+          padding: 3rem 0;
+          border-radius: 1rem;
+
+          svg {
+            width: 10rem;
+            height: 10rem;
+            fill: var(--blue-8);
+          }
+        }
+
+        &:nth-child(2n) {
+          flex-direction: row-reverse;
+        }
       }
     }
   }

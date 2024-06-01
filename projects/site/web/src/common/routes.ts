@@ -5,11 +5,6 @@ export const routes = {
     path: '/',
   },
 
-  // features
-  features: {
-    path: '/features',
-  },
-
   // blog
   blog: {
     path: '/blog',

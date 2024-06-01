@@ -32,7 +32,7 @@ export const Footer = () => (
 
         <nav>
           <label>Product</label>
-          <Link href={routes.features.path}>Features</Link>
+          <Link href={`${routes.home.path}#features`}>Features</Link>
           <Link href={routes.blog.path}>Blog</Link>
         </nav>
 
