@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  padding: 0 1rem;
+  height: 4rem;
+
+  .left,
+  .right {
+    display: flex;
+    flex-direction: row;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem;
+      color: var(--gray-11);
+      font-size: var(--font-size-para);
+      font-weight: var(--font-weight-regular);
+      transition: color 0.1s;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: 0.25rem;
+        fill: var(--gray-11);
+        transition: fill 0.1s;
+      }
+
+      &:hover {
+        color: var(--grass-11);
+
+        svg {
+          fill: var(--grass-11);
+        }
+      }
+    }
+  }
+
+  .left {
+    flex: 1;
+  }
+}
