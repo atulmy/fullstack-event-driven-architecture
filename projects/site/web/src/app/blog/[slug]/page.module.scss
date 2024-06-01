@@ -1,0 +1,24 @@
+.blog {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    gap: 1rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    gap: 1rem;
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+}

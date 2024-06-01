@@ -1,5 +1,3 @@
-'use client'
-
 // UI imports
 import { IconArrowForward } from '@packages/ui/build/icons'
 import style from './page.module.scss'
@@ -52,7 +50,7 @@ const Blog = async () => {
             <h3>{b.title}</h3>
             <h6>{subString(b.content, 100)}</h6>
 
-            <Link href={routes.blog.detail.path(b._id)}>
+            <Link href={routes.blog.detail.path(b.slug)}>
               <button>
                 Read more <IconArrowForward />
               </button>
