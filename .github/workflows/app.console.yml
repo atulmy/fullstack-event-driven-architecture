@@ -2,7 +2,7 @@ name: app.console
 
 on:
   push:
-    branches: [main] # main
+    branches: [production]
     paths:
       - 'projects/app/console/**'
       - '!projects/app/console/.env.development'

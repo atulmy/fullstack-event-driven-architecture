@@ -2,7 +2,7 @@ name: api.tts
 
 on:
   push:
-    branches: [main]
+    branches: [production]
     paths:
       - 'projects/api/tts/**'
       - '!projects/api/tts/.env.development'

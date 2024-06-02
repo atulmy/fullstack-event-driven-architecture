@@ -2,7 +2,7 @@ name: api.stt
 
 on:
   push:
-    branches: [main]
+    branches: [production]
     paths:
       - 'projects/api/stt/**'
       - '!projects/api/stt/.env.development'

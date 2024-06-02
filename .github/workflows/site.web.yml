@@ -2,7 +2,7 @@ name: site.web
 
 on:
   push:
-    branches: [main] # main
+    branches: [production]
     paths:
       - 'projects/site/web/**'
       - '!projects/site/web/.env.development'

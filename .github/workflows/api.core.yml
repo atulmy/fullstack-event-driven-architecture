@@ -2,7 +2,7 @@ name: api.core
 
 on:
   push:
-    branches: [main]
+    branches: [production]
     paths:
       - 'projects/api/core/**'
       - '!projects/api/core/.env.development'
