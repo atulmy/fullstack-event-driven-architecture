@@ -86,7 +86,7 @@ const Login = () => {
   return (
     <div className={style.login}>
       <form onSubmit={onSubmit}>
-        <h5>Console login</h5>
+        <h6>{params.site.name} Console</h6>
 
         <label>
           Email
@@ -119,6 +119,8 @@ const Login = () => {
           <IconCheck /> Submit
         </button>
       </form>
+
+      <em>Console is restricted to authorized personnel only.</em>
     </div>
   )
 }

@@ -112,7 +112,7 @@ const Login = () => {
       </button>
 
       <p>
-        Don't have an account? Click <Link href={routes.signup.path}>here</Link> to signup.
+        Don't have an account? <Link href={routes.signup.path}>Click here</Link> to signup.
       </p>
     </form>
   )

@@ -23,7 +23,7 @@ const Home = () => (
     {/* hero */}
     <Wrapper className={style.hero}>
       <h1>{params.site.tagline}</h1>
-      <h2>{params.site.description}</h2>
+      <h6>{params.site.description}</h6>
 
       <a href={URL_APP_WEB} target='_blank'>
         <button className='large'>
@@ -35,26 +35,26 @@ const Home = () => (
     {/* benefits */}
     <Wrapper className={style.benefits} id='benefits'>
       <div className={style.item}>
-        <h3>Monorepo</h3>
+        <h5>Enhanced accessibility</h5>
         <p>
-          Consolidate multiple projects into a single repository, facilitating unified version
-          control, shared dependencies, and consistent development workflows.
+          Facilitates communication for individuals with disabilities, making digital content
+          accessible to all.
         </p>
       </div>
 
       <div className={style.item}>
-        <h3>Event driven</h3>
+        <h5>Increased productivity</h5>
         <p>
-          Decouple components by using events to trigger and communicate between services, enabling
-          asynchronous and scalable interactions.
+          Allows users to multitask by converting spoken words to text and vice versa, saving time
+          and effort.
         </p>
       </div>
 
       <div className={style.item}>
-        <h3>Scalable</h3>
+        <h5>Improved accuracy</h5>
         <p>
-          Efficiently handle increased loads by adding resources or optimizing performance without
-          compromising system stability.
+          Utilizes advanced algorithms to ensure high accuracy in transcriptions and
+          natural-sounding speech synthesis.
         </p>
       </div>
     </Wrapper>

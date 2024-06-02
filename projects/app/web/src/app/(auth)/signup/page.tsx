@@ -130,7 +130,7 @@ const Signup = () => {
       </button>
 
       <p>
-        Already have an account? Click <Link href={routes.login.path}>here</Link> to login.
+        Already have an account? <Link href={routes.login.path}>Click here</Link> to login.
       </p>
     </form>
   )

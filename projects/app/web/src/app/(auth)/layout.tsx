@@ -32,6 +32,7 @@ const Layout = ({ children }) => {
   // render
   return (
     <div className={style.auth}>
+      {/* left */}
       <div className={style.left}>
         {children}
 
@@ -41,11 +42,34 @@ const Layout = ({ children }) => {
         </em>
       </div>
 
+      {/* right */}
       <div className={style.right}>
-        <IconRocket />
+        {/* intro */}
+        <div className={style.intro}>
+          <IconRocket />
 
-        <h4>{params.site.tagline}</h4>
-        <h6>{params.site.description}</h6>
+          <h4>{params.site.tagline}</h4>
+          <h6>{params.site.description}</h6>
+        </div>
+
+        {/* testimonials */}
+        <div className={style.testimonials}>
+          <blockquote>
+            <p>
+              "I love using this app for my daily tasks. The speech-to-text accuracy is phenomenal.
+              Highly recommend for anyone looking to boost productivity!"
+            </p>
+            <footer>— Jenny S.</footer>
+          </blockquote>
+
+          <blockquote>
+            <p>
+              "The text-to-speech functionality is incredibly clear, and it makes accessing digital
+              content so much easier."
+            </p>
+            <footer>— Alex T.</footer>
+          </blockquote>
+        </div>
       </div>
     </div>
   )

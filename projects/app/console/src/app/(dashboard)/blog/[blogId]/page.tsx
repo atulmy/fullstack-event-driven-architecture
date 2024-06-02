@@ -24,9 +24,9 @@ const Save = ({ params: { blogId } }) => {
   const [isRefreshing, isRefreshingToggle] = useState(false)
   const [isSubmitting, isSubmittingToggle] = useState(false)
   const [blog, setBlog] = useState({
-    title: isDevelopment() ? 'Benefits of Yoga' : '',
+    title: isDevelopment() ? 'The Future of Text-to-Speech and Speech-to-Text Technology' : '',
     content: isDevelopment()
-      ? `1. Yoga improves strength\n2. Back pain relief\n3. Ease arthritis symptoms\n4. Benefits heart health\n5. Helps you sleep better`
+      ? `Discover Speechy, an innovative app that transforms communication with its seamless text-to-speech and speech-to-text capabilities. Built on a robust, scalable architecture using Node.js, React, Redis, MongoDB, and Docker, Speechy sets a new standard in accessibility and productivity.`
       : '',
   })
 

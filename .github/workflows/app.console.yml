@@ -1,0 +1,52 @@
+name: app.console
+
+on:
+  push:
+    branches: [main] # main
+    paths:
+      - 'projects/app/console/**'
+      - '!projects/app/console/.env.development'
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+  GCP_REGION: us-west1
+  SERVICE_NAME: speechy-app-console
+  PORT: 4002
+  SOURCE: app-console
+
+jobs:
+  setup-build-deploy:
+    name: Setup, Build, and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Setup gcloud CLI
+      - name: Setup
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT }}
+          export_default_credentials: true
+
+      - name: Authorize Docker push
+        run: gcloud auth configure-docker
+
+      - name: Build and Push Container
+        run: |-
+          docker build -t "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" -f ./_$SOURCE.Dockerfile .
+          docker push "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
+
+      # Deploy image to Cloud Run
+      - name: Deploy
+        run: |-
+          gcloud run deploy "$SERVICE_NAME" \
+            --quiet \
+            --region "$GCP_REGION" \
+            --image "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" \
+            --platform "managed" \
+            --allow-unauthenticated \
+            --port=$PORT

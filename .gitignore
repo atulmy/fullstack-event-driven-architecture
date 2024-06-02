@@ -2,6 +2,7 @@
 **/node_modules
 
 # Generated
+.husky
 **/.next
 **.rollup.cache
 **tsconfig.tsbuildinfo

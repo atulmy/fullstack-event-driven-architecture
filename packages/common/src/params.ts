@@ -1,11 +1,11 @@
 export const params = {
   // site
   site: {
-    key: 'fullstack',
-    name: 'Fullstack',
-    tagline: 'Full-Stack Event Driven Architecture',
+    key: 'speechy',
+    name: 'Speechy',
+    tagline: 'Effortless Text-to-Speech and Speech-to-Text',
     description:
-      'Full-stack monorepo based, event driven, highly scalable architecture using Node, React, Redis, MongoDB, and Docker.',
+      'Speechy is built with a full-stack monorepo, featuring an event-driven, highly scalable architecture using Node.js, React, Redis, MongoDB, and Docker.',
 
     projects: {
       api: {

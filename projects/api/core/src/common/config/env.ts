@@ -18,15 +18,10 @@ export const DATABASE_URL: string = process.env.DATABASE_URL!
 
 // Security
 export const SECURITY_SECRET: string = process.env.SECURITY_SECRET!
-export const SECURITY_SALT_ROUNDS: number = parseInt(
-  `${process.env.SECURITY_SALT_ROUNDS!}`
-)
+export const SECURITY_SALT_ROUNDS: number = parseInt(`${process.env.SECURITY_SALT_ROUNDS!}`)
 
 // URL
 export const URL_API_CORE = process.env.URL_API_CORE!
 
 // Redis
 export const REDIS_HOSTNAME: string = process.env.REDIS_HOSTNAME!
-
-// Services
-export const OPENAI_API_KEY: string = process.env.OPENAI_API_KEY!

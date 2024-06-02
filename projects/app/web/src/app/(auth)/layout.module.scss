@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem 1.5rem;
-    border: 1px solid var(--gray-6);
+    border: 1px solid var(--gray-5);
     background-color: var(--gray-2);
     border-radius: 0.5rem;
     width: 20rem;
@@ -31,17 +31,43 @@
   .right {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    flex: 1;
+    max-width: 40rem;
+    gap: 2rem;
 
-    h6 {
-      color: var(--gray-11);
-      max-width: 40rem;
-      font-weight: var(--font-weight-regular);
+    .intro {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      h6 {
+        color: var(--gray-11);
+        font-weight: var(--font-weight-regular);
+      }
+
+      svg {
+        width: 4rem;
+        height: 4rem;
+      }
     }
 
-    svg {
-      width: 4rem;
-      height: 4rem;
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      blockquote {
+        font-style: italic;
+        color: var(--gray-11);
+        background-color: var(--gray-2);
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+
+        footer {
+          font-style: normal;
+          margin-top: 0.25rem;
+        }
+      }
     }
   }
 }

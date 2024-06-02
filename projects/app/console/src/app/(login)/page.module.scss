@@ -1,6 +1,6 @@
 .login {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex: 1;
@@ -9,14 +9,18 @@
 
   form {
     padding: 1rem 1.5rem;
-    border: 1px solid var(--gray-6);
+    border: 1px solid var(--gray-5);
     background-color: var(--gray-2);
     border-radius: 0.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 0.5rem;
     min-width: 20rem;
 
-    h5 {
+    h6 {
       margin-bottom: 1.5rem;
     }
+  }
+
+  em {
+    margin-bottom: 5rem;
   }
 }
