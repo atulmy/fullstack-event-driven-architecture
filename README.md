@@ -64,6 +64,8 @@ Check `.github/workflow` for GCP Cloud Run deployment example. Requires `GCP_PRO
 
 ## License
 
-Copyright (c) 2024 Atul Yadav http://github.com/atulmy
+Copyright (c) 2024 Atul Yadav 
 
-The MIT License (http://www.opensource.org/licenses/mit-license.php)
+[GitHub](http://github.com/atulmy) · [X (Twitter)](https://x.com/atulmy)
+
+[The MIT License](http://www.opensource.org/licenses/mit-license.php)
