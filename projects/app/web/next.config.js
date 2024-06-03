@@ -6,9 +6,4 @@ module.exports = {
   poweredByHeader: false,
 
   reactStrictMode: false,
-
-  experimental: {
-    swcPlugins: [['@swc-jotai/react-refresh', {}]],
-    missingSuspenseWithCSRBailout: false,
-  },
 }

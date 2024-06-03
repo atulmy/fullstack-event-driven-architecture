@@ -8,7 +8,7 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "@nine-thirty-five/material-symbols-react": "^1.5.0",
+    "@nine-thirty-five/material-symbols-react": "^1.6.0",
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "react-toastify": "^10.0.5",
@@ -28,7 +28,7 @@
     "rollup": "^4.18.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "sass": "^1.77.2",
+    "sass": "^1.77.4",
     "typescript": "^5.4.5"
   }
 }
