@@ -6,10 +6,9 @@ WORKDIR /source
 COPY package*.json ./
 COPY . ./
 RUN npm pkg delete scripts.prepare
-RUN npm install --loglevel=error --force -w @packages/common -w @packages/model -w @packages/ui -w @projects/api.core -w @projects/app.console
+RUN npm install --loglevel=error --force -w @packages/common -w @packages/ui -w @projects/api.core -w @projects/app.console
 ENV NODE_ENV=production
 RUN ["npm", "run", "build", "-w", "@packages/common"]
-RUN ["npm", "run", "build", "-w", "@packages/model"]
 RUN ["npm", "run", "build", "-w", "@packages/ui"]
 RUN ["npm", "run", "build", "-w", "@projects/app.console"]
 

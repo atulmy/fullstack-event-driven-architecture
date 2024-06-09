@@ -12,6 +12,10 @@ import { CallToAction } from '@/common/elements/cta'
 import { routes } from '@/common/routes'
 import Link from 'next/link'
 
+// no caching
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 // data
 async function blogList() {
   let blog

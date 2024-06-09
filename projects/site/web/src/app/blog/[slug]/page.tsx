@@ -6,6 +6,10 @@ import { api } from '@/common/config/api'
 import { Wrapper } from '@/common/elements/wrapper'
 import { CallToAction } from '@/common/elements/cta'
 
+// no caching
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 // data
 async function blogDetail({ slug }) {
   let blog

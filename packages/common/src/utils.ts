@@ -27,16 +27,6 @@ export function subString(string: string = '', length: number = 0, append: boole
   return string.length > length ? `${string.substring(0, length)}${append ? '...' : ''}` : string
 }
 
-// Object to buffer
-export function ObjectToBuffer(payload) {
-  return Buffer.from(JSON.stringify(payload))
-}
-
-// Buffer to object
-export function BufferToObject(payload) {
-  return JSON.parse(Buffer.from(payload, 'base64').toString())
-}
-
 // Auth check
 export function authCheck(auth, role = '', exact = false) {
   return (
