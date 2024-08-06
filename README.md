@@ -59,7 +59,7 @@
       - [localhost:5001](http://localhost:5001)
 
 ## Notes
-Redis as a message broker is only used for development purposed. It should be replaced with a more feature rich pub/sub like RabbitMQ, Kafka, Google Cloud Pub/Sub, etc. for production.
+Redis as a message broker is only used for development purpose. It should be replaced with a more feature rich pub/sub like RabbitMQ, Kafka, Google Cloud Pub/Sub, etc. for production.
 
 ## Deploying
 
