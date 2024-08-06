@@ -6,10 +6,10 @@
   <tbody>
     <tr>
       <td>
-        <img alt="Landing" src="https://raw.githubusercontent.com/atulmy/atulmy.github.io/master/images/fullstack-event-driven-architecture/architecture-overview.png" />
+        <img alt="Landing" src="https://raw.githubusercontent.com/atulmy/storage/master/images/fullstack-event-driven-architecture/architecture-overview.png" />
       </td>
       <td>
-        <img alt="Landing" src="https://raw.githubusercontent.com/atulmy/atulmy.github.io/master/images/fullstack-event-driven-architecture/data-flow.png" />
+        <img alt="Landing" src="https://raw.githubusercontent.com/atulmy/storage/master/images/fullstack-event-driven-architecture/data-flow.png" />
       </td>
     </tr>
   </tbody>
