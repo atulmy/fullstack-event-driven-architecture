@@ -2,8 +2,8 @@
 import ip from 'ip'
 
 // App imports
-import { PORT, ENV } from '../common/config/env.js'
-import { close as redisClose } from './redis.js'
+import { PORT, ENV } from '../common/config/env'
+import { close as redisClose } from './redis'
 
 // Start server
 export async function start(app, server) {

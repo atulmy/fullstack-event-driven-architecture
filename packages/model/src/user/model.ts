@@ -2,10 +2,10 @@
 import mongoose, { Schema } from 'mongoose'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
+import { params } from '@packages/common/params'
 
 // Local imports
-import { UserInterface } from './types.js'
+import { UserInterface } from './types'
 
 // Collection name
 export const collection: string = 'User'

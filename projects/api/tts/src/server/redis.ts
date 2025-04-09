@@ -2,7 +2,7 @@
 import { createClient } from 'redis'
 
 // Local imports
-import { REDIS_HOSTNAME } from '../common/config/env.js'
+import { REDIS_HOSTNAME } from '../common/config/env'
 
 console.info('SETUP - Connecting to Redis..')
 

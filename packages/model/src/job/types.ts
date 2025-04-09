@@ -2,7 +2,7 @@
 import { Document as DocumentInterface } from 'mongoose'
 
 // Local imports
-import { UserInterface } from '../user/types.js'
+import { UserInterface } from '../user/types'
 
 // Interface
 export interface JobInterface extends DocumentInterface {

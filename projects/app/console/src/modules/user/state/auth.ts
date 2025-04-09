@@ -3,7 +3,7 @@ import { atom } from 'jotai'
 
 // initial
 export const initial = {
-  isAuthenticated: false,
+  status: false,
   token: null,
   user: null,
 }
@@ -29,8 +29,7 @@ const atomWithLocalStorage = (key, initialValue) => {
     (get) => get(baseAtom),
     (get, set, update) => {
       try {
-        const nextValue =
-          typeof update === 'function' ? update(get(baseAtom)) : update
+        const nextValue = typeof update === 'function' ? update(get(baseAtom)) : update
         set(baseAtom, nextValue)
         window.localStorage.setItem(key, JSON.stringify(nextValue))
       } catch (error) {}
@@ -41,4 +40,4 @@ const atomWithLocalStorage = (key, initialValue) => {
 }
 
 // user auth
-export const userAuth = atomWithLocalStorage('user', initial)
+export const userAuth = atomWithLocalStorage('userAuth', initial)

@@ -2,7 +2,7 @@
 import mongoose, { Schema } from 'mongoose'
 
 // Local imports
-import { BlogInterface } from './types.js'
+import { BlogInterface } from './types'
 
 // Collection name
 export const collection: string = 'Blog'

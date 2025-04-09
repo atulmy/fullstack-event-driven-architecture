@@ -1,9 +1,9 @@
 // Common imports
-import { params } from '@packages/common/build/params.js'
-import { Job } from '@packages/model/build/job/model.js'
+import { params } from '@packages/common/params'
+import { Job } from '@packages/model/job/model'
 
 // App imports
-import { subscriber, publisher } from '../../../server/redis.js'
+import { subscriber, publisher } from '../../../server/redis'
 
 // subscribe - tts - finish
 subscriber.subscribe(params.job.types.tts.channels.finish, async (event) => {

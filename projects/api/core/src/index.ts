@@ -1,11 +1,11 @@
 // Local imports
-import { app, httpServer } from './server/app.js'
-import { middlewares } from './server/middlewares.js'
-import './server/database.js'
-import './server/redis.js'
-import { upload } from './server/upload.js'
-import { endpoint } from './server/endpoint.js'
-import { start } from './server/start.js'
+import { app, httpServer } from './server/app'
+import { middlewares } from './server/middlewares'
+import './server/database'
+import './server/redis'
+import { upload } from './server/upload'
+import { endpoint } from './server/endpoint'
+import { start } from './server/start'
 
 // boot
 ;(async function () {

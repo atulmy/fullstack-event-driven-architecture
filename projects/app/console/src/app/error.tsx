@@ -4,7 +4,7 @@
 import Link from 'next/link'
 
 // UI imports
-import { IconRocket } from '@packages/ui/build/icons'
+import { IconRocket } from '@packages/ui/icons/index'
 import style from './error.module.scss'
 
 // Local imports

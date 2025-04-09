@@ -1,29 +1,31 @@
 {
   "name": "@projects/app.web",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "type": "module",
   "private": true,
   "scripts": {
-    "start": "next dev -p 4001",
+    "dev": "next dev -p 4001",
     "build": "next build",
     "start:prod": "next start -p 4001"
   },
   "dependencies": {
     "@packages/common": "*",
     "@packages/ui": "*",
-    "@trpc/client": "^10.45.2",
-    "@trpc/server": "^10.45.2",
+    "@trpc/client": "^11.0.4",
+    "@trpc/server": "^11.0.4",
     "clsx": "^2.1.1",
-    "dayjs": "^1.11.11",
-    "jotai": "^2.8.3",
+    "dayjs": "^1.11.13",
+    "jotai": "^2.12.2",
     "lodash": "^4.17.21",
-    "next": "14.2.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "sass": "^1.77.4"
+    "next": "15.2.5",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@types/node": "^20.14.2",
-    "@types/react": "^18.3.3",
-    "typescript": "^5.4.5"
+    "@types/node": "^22.14.0",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.2",
+    "sass": "^1.86.3",
+    "typescript": "5.8.3"
   }
 }

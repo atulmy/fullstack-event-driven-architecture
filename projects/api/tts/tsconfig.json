@@ -1,11 +1,10 @@
 {
-  "extends": "../../../tsconfig.base.json",
+  "extends": "@packages/tsconfig/base.json",
   "compilerOptions": {
-    "composite": true,
-    "rootDir": "./src",
+    "lib": ["ES2022"],
     "outDir": "./build",
-    "noEmit": true
+    "rootDir": "./src"
   },
-  "include": ["./src/"],
-  "ts-node": { "swc": true }
+  "exclude": ["node_modules"],
+  "include": ["src"]
 }

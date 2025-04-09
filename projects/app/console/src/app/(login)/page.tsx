@@ -6,11 +6,11 @@ import { useAtom } from 'jotai'
 import { useRouter } from 'next/navigation'
 
 // UI imports
-import { IconCheck } from '@packages/ui/build/icons'
+import { IconCheck } from '@packages/ui/icons/index'
 import style from './page.module.scss'
 
 // Common imports
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // Local imports
 import { api } from '@/common/config/api'

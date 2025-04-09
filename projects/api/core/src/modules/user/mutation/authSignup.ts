@@ -4,13 +4,13 @@ import bcrypt from 'bcrypt'
 import { z } from 'zod'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
-import { emailClean } from '@packages/common/build/utils.js'
-import { User } from '@packages/model/build/user/model.js'
+import { params } from '@packages/common/params'
+import { emailClean } from '@packages/common/utils'
+import { User } from '@packages/model/user/model'
 
 // Local imports
-import { procedurePublic } from '../../../server/rpc.js'
-import { SECURITY_SALT_ROUNDS } from '../../../common/config/env.js'
+import { procedurePublic } from '../../../server/rpc'
+import { SECURITY_SALT_ROUNDS } from '../../../common/config/env'
 
 // procedure
 export const authSignup = procedurePublic

@@ -1,10 +1,10 @@
 // Local imports
-import { router } from '../../server/rpc.js'
-import './event/index.js'
-import { adminList } from './query/adminList.js'
-import { list } from './query/list.js'
-import { create } from './mutation/create.js'
-import { updates } from './subscription/updates.js'
+import { router } from '../../server/rpc'
+import './event/index'
+import { adminList } from './query/adminList'
+import { list } from './query/list'
+import { create } from './mutation/create'
+import { updates } from './subscription/updates'
 
 // router
 export const job = router({

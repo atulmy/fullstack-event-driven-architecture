@@ -1,34 +1,25 @@
 {
   "name": "@packages/ui",
-  "version": "1.0.0",
-  "type": "module",
-  "module": "build/index.js",
-  "scripts": {
-    "start": "rollup -c -w",
-    "build": "rollup -c"
-  },
-  "dependencies": {
-    "@nine-thirty-five/material-symbols-react": "^1.6.0",
-    "@radix-ui/colors": "^3.0.0",
-    "@radix-ui/react-alert-dialog": "^1.0.5",
-    "react-toastify": "^10.0.5",
-    "the-new-css-reset": "^1.11.2"
-  },
+  "version": "0.0.1",
   "peerDependencies": {
     "clsx": "^2.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19",
+    "sass": "^1.85.1"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.6",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "rollup": "^4.18.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "sass": "^1.77.4",
-    "typescript": "^5.4.5"
-  }
+    "@packages/common": "*",
+    "@packages/tsconfig": "*",
+    "@nine-thirty-five/material-symbols-react": "^1.14.2",
+    "@radix-ui/colors": "^3.0.0",
+    "@radix-ui/react-alert-dialog": "^1.1.7",
+    "react-toastify": "^11.0.5",
+    "the-new-css-reset": "^1.11.3",
+    "typescript": "5.8.3"
+  },
+  "exports": {
+    "./*": "./src/*.tsx"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ]
 }

@@ -7,10 +7,10 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 // UI imports
-import { IconCheck } from '@packages/ui/build/icons'
+import { IconCheck } from '@packages/ui/icons/index'
 
 // Common imports
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // Local imports
 import { api } from '@/common/config/api'

@@ -6,8 +6,8 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 // UI imports
-import { Loader } from '@packages/ui/build/loader'
-import { IconArrowBack, IconCheck } from '@packages/ui/build/icons'
+import { Loader } from '@packages/ui/loader/index'
+import { IconArrowBack, IconCheck } from '@packages/ui/icons/index'
 import style from './page.module.scss'
 
 // Local imports

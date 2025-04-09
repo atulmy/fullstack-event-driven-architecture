@@ -3,12 +3,12 @@ import { writeFile } from 'fs/promises'
 import dayjs from 'dayjs'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
+import { params } from '@packages/common/params'
 
 // App imports
-import { subscriber, publisher } from '../server/redis.js'
-import { openai } from '../common/config/openai.js'
-import { storageFilePath } from '../common/helpers/utils.js'
+import { subscriber, publisher } from '../server/redis'
+import { openai } from '../common/config/openai'
+import { storageFilePath } from '../common/helpers/utils'
 
 // subscribe - start
 subscriber.subscribe(params.job.types.tts.channels.start, async (event) => {

@@ -1,9 +1,9 @@
 // Local imports
-import { router } from '../../server/rpc.js'
-import { adminAuthLogin } from './query/adminAuthLogin.js'
-import { adminList } from './query/adminList.js'
-import { authLogin } from './query/authLogin.js'
-import { authSignup } from './mutation/authSignup.js'
+import { router } from '../../server/rpc'
+import { adminAuthLogin } from './query/adminAuthLogin'
+import { adminList } from './query/adminList'
+import { authLogin } from './query/authLogin'
+import { authSignup } from './mutation/authSignup'
 
 // router
 export const user = router({

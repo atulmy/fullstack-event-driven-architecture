@@ -5,10 +5,10 @@ import { z } from 'zod'
 import jwt from 'jsonwebtoken'
 
 // App imports
-import { procedurePublic } from '../../../server/rpc.js'
-import { SECURITY_SECRET } from '../../../common/config/env.js'
-import { eventEmitter } from '../../../common/config/event.js'
-import { params } from '@packages/common/build/params.js'
+import { procedurePublic } from '../../../server/rpc'
+import { SECURITY_SECRET } from '../../../common/config/env'
+import { eventEmitter } from '../../../common/config/event'
+import { params } from '@packages/common/params'
 
 // procedure
 export const updates = procedurePublic

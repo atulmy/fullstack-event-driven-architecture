@@ -1,9 +1,9 @@
 // App imports
-import './server/redis.js'
-import './event/index.js'
-import { app, httpServer } from './server/app.js'
-import { middlewares } from './server/middlewares.js'
-import { start } from './server/start.js'
+import './server/redis'
+import './event/index'
+import { app, httpServer } from './server/app'
+import { middlewares } from './server/middlewares'
+import { start } from './server/start'
 
 // boot
 ;(async function () {

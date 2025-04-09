@@ -4,10 +4,10 @@ import { unlink } from 'fs/promises'
 import { fileURLToPath } from 'url'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
+import { params } from '@packages/common/params'
 
 // Local imports
-import { ENV } from '../config/env.js'
+import { ENV } from '../config/env'
 
 // Utility functions
 

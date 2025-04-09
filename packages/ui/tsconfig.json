@@ -1,13 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "build",
-    "composite": true,
-    "declaration": true,
-    "declarationDir": "build",
-    "emitDeclarationOnly": true,
-    "jsx": "react-jsx",
-  },
-  "include": ["./src/"],
+  "extends": "@packages/tsconfig/react.json",
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

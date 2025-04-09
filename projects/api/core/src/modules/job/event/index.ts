@@ -1,2 +1,2 @@
 // App imports
-import './finish.js'
+import './finish'

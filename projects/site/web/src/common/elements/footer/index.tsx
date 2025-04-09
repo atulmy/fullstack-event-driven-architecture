@@ -5,11 +5,11 @@ import React from 'react'
 import Link from 'next/link'
 
 // UI imports
-import { IconRocket } from '@packages/ui/build/icons'
+import { IconRocket } from '@packages/ui/icons/index'
 import style from './style.module.scss'
 
 // Common imports
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // Local imports
 import { URL_APP_WEB } from '@/common/config/env'

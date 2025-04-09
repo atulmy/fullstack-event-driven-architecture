@@ -6,13 +6,13 @@ import { useAtomValue } from 'jotai'
 import { useRouter } from 'next/navigation'
 
 // UI imports
-import { IconRocket } from '@packages/ui/build/icons'
+import { IconRocket } from '@packages/ui/icons/index'
 import style from './layout.module.scss'
 
 // Local imports
 import { userAuth } from '@/modules/user/state/auth'
 import { routes } from '@/common/routes'
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // Component
 const Layout = ({ children }) => {

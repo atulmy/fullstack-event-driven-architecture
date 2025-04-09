@@ -1,9 +1,10 @@
-module.exports = {
-  devIndicators: {
-    buildActivity: false,
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  distDir: process.env.BUILD_DIR || '.next',
+
+  devIndicators: false,
 
   poweredByHeader: false,
-
-  reactStrictMode: false,
 }
+
+export default nextConfig

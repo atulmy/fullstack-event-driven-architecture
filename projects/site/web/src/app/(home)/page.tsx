@@ -6,11 +6,11 @@ import {
   IconSpeechToText,
   IconTextToSpeech,
   IconTrackChanges,
-} from '@packages/ui/build/icons'
+} from '@packages/ui/icons/index'
 import style from './page.module.scss'
 
 // Common imports
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // Local imports
 import { URL_APP_WEB } from '@/common/config/env'

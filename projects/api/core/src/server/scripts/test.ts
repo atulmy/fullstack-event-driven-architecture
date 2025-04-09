@@ -1,10 +1,10 @@
 // Imports
 import dayjs from 'dayjs'
-import duration from 'dayjs/plugin/duration.js'
+import duration from 'dayjs/plugin/duration'
 dayjs.extend(duration)
 
 // Local imports
-import { close, database } from '../database.js'
+import { close, database } from '../database'
 
 // cd projects/api.core && NODE_ENV=development node --loader ts-node/esm ./src/server/scripts/test.ts
 

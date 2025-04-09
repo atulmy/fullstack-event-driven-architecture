@@ -1,5 +1,5 @@
 // UI imports
-import { toast } from '@packages/ui/build/toast'
+import { toast } from '@packages/ui/toast/index'
 
 // Local imports
 import { ENV } from '@/common/config/env'
@@ -19,4 +19,24 @@ export function notify({
   toast(message, {
     autoClose: autoClose > 0 ? autoClose : success ? 3500 : 10000,
   })
+}
+
+// auth header
+export function authHeader() {
+  try {
+    const data = window.localStorage.getItem('userAuth')
+
+    if (data) {
+      const user = JSON.parse(data)
+      if (user.token) {
+        return {
+          authorization: `Bearer ${user.token}`,
+        }
+      }
+    }
+  } catch (error) {
+    console.log('error authHeader', error)
+  }
+
+  return {}
 }

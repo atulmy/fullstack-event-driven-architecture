@@ -2,11 +2,11 @@
 import { createClient } from 'redis'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
+import { params } from '@packages/common/params'
 
 // Local imports
-import { REDIS_HOSTNAME } from '../common/config/env.js'
-import { eventEmitter } from '../common/config/event.js'
+import { REDIS_HOSTNAME } from '../common/config/env'
+import { eventEmitter } from '../common/config/event'
 
 console.info('SETUP - Connecting to Redis..')
 
@@ -14,7 +14,7 @@ console.info('SETUP - Connecting to Redis..')
 export const subscriber = createClient({
   url: 'redis://' + REDIS_HOSTNAME,
 })
-await subscriber.connect()
+subscriber.connect()
 
 // subscribe to all events
 subscriber.subscribe(params.site.projects.api.core, (event) => {
@@ -36,7 +36,7 @@ subscriber.on('error', (error) => {
 export const publisher = createClient({
   url: 'redis://' + REDIS_HOSTNAME,
 })
-await publisher.connect()
+publisher.connect()
 
 publisher.on('error', (error) => {
   console.log(`ERROR - Connection failed Redis publisher: ${error.message}`)

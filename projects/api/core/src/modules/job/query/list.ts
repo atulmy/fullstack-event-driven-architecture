@@ -2,11 +2,11 @@
 import { TRPCError } from '@trpc/server'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
-import { Job } from '@packages/model/build/job/model.js'
+import { params } from '@packages/common/params'
+import { Job } from '@packages/model/job/model'
 
 // Local imports
-import { procedureUser } from '../../../server/rpc.js'
+import { procedureUser } from '../../../server/rpc'
 
 // procedure
 export const list = procedureUser.query(async ({ ctx }) => {

@@ -1,5 +1,5 @@
 // UI imports
-import { toast } from '@packages/ui/build/toast'
+import { toast } from '@packages/ui/toast/index'
 
 // Local imports
 import { ENV, URL_API_CORE } from '@/common/config/env'
@@ -27,4 +27,24 @@ export function upload(data) {
     method: 'POST',
     body: data,
   }).then((response) => response.json())
+}
+
+// auth header
+export function authHeader() {
+  try {
+    const data = window.localStorage.getItem('userAuth')
+
+    if (data) {
+      const user = JSON.parse(data)
+      if (user.token) {
+        return {
+          authorization: `Bearer ${user.token}`,
+        }
+      }
+    }
+  } catch (error) {
+    console.log('error authHeader', error)
+  }
+
+  return {}
 }

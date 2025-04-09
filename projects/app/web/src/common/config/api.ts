@@ -1,26 +1,32 @@
 // Imports
 import {
-  createTRPCProxyClient,
-  httpBatchLink,
+  createTRPCClient,
   createWSClient,
-  wsLink,
+  httpBatchLink,
+  loggerLink,
   splitLink,
+  wsLink,
 } from '@trpc/client'
+
+// Package imports
+import { params } from '@packages/common/params'
 
 // Project imports
 // @ts-ignore
 import type { AppRouter } from '../../../../../api/core/src/server/endpoint'
 
-// Common imports
-import { params } from '@packages/common/build/params.js'
-
 // Local imports
 import { URL_API_CORE, URL_API_CORE_WS } from '@/common/config/env'
+import { authHeader, isDevelopment } from '@/common/helpers/utils'
 
 // api
-// @ts-ignore
-export const api = createTRPCProxyClient<AppRouter>({
+export const api = createTRPCClient<AppRouter>({
   links: [
+    // logger link
+    loggerLink({
+      enabled: () => isDevelopment(),
+    }),
+
     splitLink({
       condition: (op) => op.type === 'subscription',
 
@@ -36,20 +42,7 @@ export const api = createTRPCProxyClient<AppRouter>({
         url: `${URL_API_CORE}${params.common.endpoint.rpc}`,
 
         async headers() {
-          try {
-            const data = window.localStorage.getItem('user')
-
-            if (data) {
-              const user = JSON.parse(data)
-              if (user.token) {
-                return {
-                  authorization: `Bearer ${user.token}`,
-                }
-              }
-            }
-          } catch (error) {
-            console.log('error', error)
-          }
+          return authHeader()
         },
       }),
     }),

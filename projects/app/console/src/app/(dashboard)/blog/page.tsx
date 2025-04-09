@@ -6,12 +6,12 @@ import Link from 'next/link'
 import day from 'dayjs'
 
 // UI imports
-import { Loader } from '@packages/ui/build/loader'
-import { IconAdd } from '@packages/ui/build/icons'
+import { Loader } from '@packages/ui/loader/index'
+import { IconAdd } from '@packages/ui/icons/index'
 import style from './page.module.scss'
 
 // Common imports
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // Local imports
 import { api } from '@/common/config/api'

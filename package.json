@@ -1,37 +1,25 @@
 {
-  "name": "fullstack",
-  "version": "1.0.0",
+  "name": "speechy",
+  "private": true,
   "scripts": {
-    "common": "npm run start -w @packages/common",
-    "model": "npm run start -w @packages/model",
-    "ui": "npm run start -w @packages/ui",
-    "api.core": "npm run start -w @projects/api.core",
-    "api.stt": "npm run start -w @projects/api.stt",
-    "api.tts": "npm run start -w @projects/api.tts",
-    "app.console": "npm run start -w @projects/app.console",
-    "app.web": "npm run start -w @projects/app.web",
-    "site.web": "npm run start -w @projects/site.web",
-    "reinstall": "npm run clean && npm i --package-lock-only --force && npm ci  --loglevel=error && npm run build:packages",
-    "build:packages": "npm run build -w @packages/common && npm run build -w @packages/model && npm run build -w @packages/ui",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
     "clean": "sh ./clean.sh",
-    "prepare": "npx husky install"
-  },
-  "workspaces": [
-    "packages/common",
-    "packages/model",
-    "packages/ui",
-    "projects/api/core",
-    "projects/api/stt",
-    "projects/api/tts",
-    "projects/app/console",
-    "projects/app/web",
-    "projects/site/web"
-  ],
-  "dependencies": {
-    "workspaces": "^0.1.0"
+    "reinstall": "npm run clean && npm install --force "
   },
   "devDependencies": {
-    "prettier": "^3.3.1",
-    "typescript": "^5.4.5"
-  }
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.0",
+    "typescript": "5.8.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@11.3.0",
+  "workspaces": [
+    "packages/*",
+    "projects/api/*",
+    "projects/app/*",
+    "projects/site/*"
+  ]
 }

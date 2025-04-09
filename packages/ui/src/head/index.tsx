@@ -1,5 +1,19 @@
+// UI imports
+import '@radix-ui/colors/blue.css'
+import '@radix-ui/colors/blue-alpha.css'
+import '@radix-ui/colors/blue-dark.css'
+import '@radix-ui/colors/blue-dark-alpha.css'
+import '@radix-ui/colors/gray.css'
+import '@radix-ui/colors/gray-alpha.css'
+import '@radix-ui/colors/gray-dark.css'
+import '@radix-ui/colors/gray-dark-alpha.css'
+import '@radix-ui/colors/black-alpha.css'
+import 'the-new-css-reset/css/reset.css'
+import './variables.css'
+import './base.css'
+
 // Common imports
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // Component
 export const Head = () => (

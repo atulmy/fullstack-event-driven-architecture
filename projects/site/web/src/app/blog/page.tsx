@@ -1,9 +1,9 @@
 // UI imports
-import { IconArrowForward } from '@packages/ui/build/icons'
+import { IconArrowForward } from '@packages/ui/icons/index'
 import style from './page.module.scss'
 
 // Common imports
-import { subString } from '@packages/common/build/utils'
+import { subString } from '@packages/common/utils'
 
 // Local imports
 import { api } from '@/common/config/api'

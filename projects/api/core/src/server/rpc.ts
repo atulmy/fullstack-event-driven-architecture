@@ -2,9 +2,9 @@
 import { initTRPC, TRPCError } from '@trpc/server'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
-import { authCheck } from '@packages/common/build/utils.js'
-import { UserInterface } from '@packages/model/build/user/types.js'
+import { params } from '@packages/common/params'
+import { authCheck } from '@packages/common/utils'
+import { UserInterface } from '@packages/model/user/types'
 
 // init
 const t = initTRPC

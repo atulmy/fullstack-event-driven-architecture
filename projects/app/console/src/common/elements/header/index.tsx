@@ -7,11 +7,11 @@ import { useAtom } from 'jotai'
 import { useRouter } from 'next/navigation'
 
 // Common imports
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // UI imports
-import { Alert } from '@packages/ui/build/alert'
-import { IconRocket } from '@packages/ui/build/icons'
+import { Alert } from '@packages/ui/alert/index'
+import { IconRocket } from '@packages/ui/icons/index'
 import style from './style.module.scss'
 
 // Local imports

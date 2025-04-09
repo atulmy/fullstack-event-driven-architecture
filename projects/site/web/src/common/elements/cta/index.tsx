@@ -4,11 +4,11 @@
 import React from 'react'
 
 // UI imports
-import { IconArrowForward } from '@packages/ui/build/icons'
+import { IconArrowForward } from '@packages/ui/icons/index'
 import style from './style.module.scss'
 
 // Common imports
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // Local imports
 import { URL_APP_WEB } from '@/common/config/env'

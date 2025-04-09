@@ -3,11 +3,11 @@ import { TRPCError } from '@trpc/server'
 import { z } from 'zod'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
-import { User } from '@packages/model/build/user/model.js'
+import { params } from '@packages/common/params'
+import { User } from '@packages/model/user/model'
 
 // Local imports
-import { procedureAdmin } from '../../../server/rpc.js'
+import { procedureAdmin } from '../../../server/rpc'
 
 // procedure
 export const adminList = procedureAdmin

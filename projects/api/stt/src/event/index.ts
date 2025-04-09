@@ -1,2 +1,2 @@
 // App imports
-import './start.js'
+import './start'

@@ -2,17 +2,22 @@
 **/node_modules
 
 # Generated
-.husky
+.turbo
 **/.next
 **.rollup.cache
 **tsconfig.tsbuildinfo
 **/build
 **/dist
+./out
 
 ## Env
 **/.env.local
 **/.env.development
 **/.env.production
+projects/api/**/.env*
+staging.json
+
+**/.env
 
 # Misc
 **/.DS_Store

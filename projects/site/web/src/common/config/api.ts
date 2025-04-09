@@ -1,12 +1,12 @@
 // Imports
-import { createTRPCProxyClient, httpBatchLink } from '@trpc/client'
+import { createTRPCClient, httpBatchLink } from '@trpc/client'
 
 // Project imports
 // @ts-ignore
 import type { AppRouter } from '../../../../../api/core/src/server/endpoint'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
+import { params } from '@packages/common/params'
 
 // Local imports
 import { URL_API_CORE } from '@/common/config/env'
@@ -19,6 +19,6 @@ const httpLink = httpBatchLink({
 })
 
 // @ts-ignore
-export const api = createTRPCProxyClient<AppRouter>({
+export const api = createTRPCClient<AppRouter>({
   links: [httpLink],
 })

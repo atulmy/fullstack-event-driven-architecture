@@ -5,17 +5,17 @@ import { WebSocketServer } from 'ws'
 import jwt from 'jsonwebtoken'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
-import { User } from '@packages/model/build/user/model.js'
+import { params } from '@packages/common/params'
+import { User } from '@packages/model/user/model'
 
 // Local imports
-import { SECURITY_SECRET } from '../common/config/env.js'
-import { router } from './rpc.js'
+import { SECURITY_SECRET } from '../common/config/env'
+import { router } from './rpc'
 
 // modules
-import { blog } from '../modules/blog/index.js'
-import { job } from '../modules/job/index.js'
-import { user } from '../modules/user/index.js'
+import { blog } from '../modules/blog/index'
+import { job } from '../modules/job/index'
+import { user } from '../modules/user/index'
 
 // router
 const appRouter = router({

@@ -3,13 +3,13 @@ import { TRPCError } from '@trpc/server'
 import { z } from 'zod'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
-import { Job } from '@packages/model/build/job/model.js'
+import { params } from '@packages/common/params'
+import { Job } from '@packages/model/job/model'
 
 // Local imports
-import { procedureUser } from '../../../server/rpc.js'
-import { eventEmitter } from '../../../common/config/event.js'
-import { publisher } from '../../../server/redis.js'
+import { procedureUser } from '../../../server/rpc'
+import { eventEmitter } from '../../../common/config/event'
+import { publisher } from '../../../server/redis'
 
 // procedure
 export const create = procedureUser

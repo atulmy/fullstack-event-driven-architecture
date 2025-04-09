@@ -1,13 +1,12 @@
 'use client'
 
 // UI imports
-import '@packages/ui/build/index.css'
-import { Zoom, ToastContainer } from '@packages/ui/build/toast'
-import { Head } from '@packages/ui/build/head'
+import { Zoom, ToastContainer } from '@packages/ui/toast/index'
+import { Head } from '@packages/ui/head/index'
 import style from './layout.module.scss'
 
 // Common imports
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // Local imports
 import { Header } from '@/common/elements/header'

@@ -2,8 +2,8 @@
 import mongoose, { Schema } from 'mongoose'
 
 // Local imports
-import { User } from '../user/model.js'
-import { JobInterface } from './types.js'
+import { User } from '../user/model'
+import { JobInterface } from './types'
 
 // Collection name
 export const collection = 'Job'

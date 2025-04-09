@@ -7,10 +7,10 @@ import bodyParser from 'body-parser'
 import morgan from 'morgan'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
+import { params } from '@packages/common/params'
 
 // Local imports
-import { isDevelopment } from '../common/helpers/utils.js'
+import { isDevelopment } from '../common/helpers/utils'
 
 // middlewares
 export function middlewares(app) {

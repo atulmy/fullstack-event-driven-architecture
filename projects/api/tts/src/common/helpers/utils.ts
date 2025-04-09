@@ -7,10 +7,10 @@ import { pipeline } from 'stream/promises'
 import { Readable } from 'stream'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
+import { params } from '@packages/common/params'
 
 // App imports
-import { ENV } from '../config/env.js'
+import { ENV } from '../config/env'
 
 // Utility functions
 

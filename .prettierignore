@@ -1,4 +1,5 @@
 # Dependencies
+.turbo
 **/node_modules
 
 # Generated
@@ -7,3 +8,4 @@
 
 # misc
 **.old
+.env*

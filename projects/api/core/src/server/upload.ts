@@ -4,7 +4,7 @@ import Multer from 'multer'
 import dayjs from 'dayjs'
 
 // Common imports
-import { params } from '@packages/common/build/params.js'
+import { params } from '@packages/common/params'
 
 // File upload configurations and route
 export function upload(app) {

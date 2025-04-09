@@ -5,11 +5,11 @@ import { useState, useEffect } from 'react'
 import day from 'dayjs'
 
 // UI imports
-import { Loader } from '@packages/ui/build/loader'
+import { Loader } from '@packages/ui/loader/index'
 import style from './page.module.scss'
 
 // Common imports
-import { params } from '@packages/common/build/params'
+import { params } from '@packages/common/params'
 
 // Local imports
 import { api } from '@/common/config/api'

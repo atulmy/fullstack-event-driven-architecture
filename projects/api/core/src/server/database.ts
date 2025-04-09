@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 mongoose.set('strictQuery', true)
 
 // Local imports
-import { ENV, DATABASE_URL } from '../common/config/env.js'
+import { ENV, DATABASE_URL } from '../common/config/env'
 
 // Drop database
 export async function drop() {
@@ -48,4 +48,4 @@ const connectWithRetry = async () => {
 // Connect database
 console.info('SETUP - Connecting database..')
 
-await connectWithRetry()
+connectWithRetry()
