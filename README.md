@@ -29,36 +29,38 @@
 - Switch to directory `cd speechy`
 - Setup
   - Install packages `npm install`
- 
+
 ## Running
+
 - Packages
-  - common `npm start common`
-  - model `npm start model`
-  - ui `npm start ui`
+  - common `npm run common`
+  - model `npm run model`
+  - ui `npm run ui`
 - Projects
   - api
     - core
-      - `npm start api.core`
+      - `npm run api.core`
       - [localhost:3001](http://localhost:3001)
     - stt (speech-to-text)
-      - `npm start api.stt`
+      - `npm run api.stt`
       - [localhost:3002](http://localhost:3002)
     - tts (text-to-speech)
-      - `npm start api.tts`
+      - `npm run api.tts`
       - [localhost:3003](http://localhost:3003)
   - app
     - web
-      - `npm start app.web`
+      - `npm run app.web`
       - [localhost:4001](http://localhost:4001)
     - console
-      - `npm start app.console`
+      - `npm run app.console`
       - [localhost:4002](http://localhost:4002)
   - site
     - web
-      - `npm start site.web`
+      - `npm run site.web`
       - [localhost:5001](http://localhost:5001)
 
 ## Notes
+
 Redis as a message broker is only used for development purpose. It should be replaced with a more feature rich pub/sub like RabbitMQ, Kafka, Google Cloud Pub/Sub, etc. for production.
 
 ## Deploying
@@ -67,7 +69,7 @@ Check `.github/workflow` for GCP Cloud Run deployment example. Requires `GCP_PRO
 
 ## License
 
-Copyright (c) 2024 Atul Yadav 
+Copyright (c) 2024 Atul Yadav
 
 [GitHub](http://github.com/atulmy) · [X (Twitter)](https://x.com/atulmy)
 

@@ -11,6 +11,7 @@
 
 ## Env
 **/.env.local
+**/.env.development
 **/.env.production
 
 # Misc
