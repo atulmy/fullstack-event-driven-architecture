@@ -55,15 +55,15 @@
 - Install packages `npm install`
 - Clean up `npm run clean`
 - Reinstall packages `npm run reinstall`
+- Copy env for api services
+  - `cp ./projects/api/core/.env.example ./projects/api/core/.env.development`
+  - `cp ./projects/api/stt/.env.example ./projects/api/stt/.env.development`
+  - `cp ./projects/api/tts/.env.example ./projects/api/tts/.env.development`
 - Start dev servers `npm run dev`
 
 ## Notes
 
 Redis as a message broker is only used for development purpose. It should be replaced with a more feature rich pub/sub like RabbitMQ, Kafka, Google Cloud Pub/Sub, etc. for production.
-
-## Deploying
-
-Check `.github/workflow` for GCP Cloud Run deployment example. Requires `GCP_PROJECT` and `GCP_SA_KEY` added to repository secret along with Redis instance configured in GCP.
 
 ## License
 
