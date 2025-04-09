@@ -20,6 +20,7 @@
 ## Structure
 
 - packages
+
   - common
   - model
   - ui
@@ -49,7 +50,7 @@
   - MongoDB
   - Redis
 
-- Clone repository `git clone git@github.com:atulmy/fullstack-event-driven-architecture.git speechy`
+- Clone repository `git clone git@github.com:atulmy/fullstack-event-driven-architecture.git fullstack`
 - Switch to directory `cd fullstack`
 - Install packages `npm install`
 - Clean up `npm run clean`
