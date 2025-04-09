@@ -55,6 +55,7 @@
 - Install packages `npm install`
 - Clean up `npm run clean`
 - Reinstall packages `npm run reinstall`
+- Start dev servers `npm run dev`
 
 ## Notes
 
